@@ -1,0 +1,156 @@
+──────────────────────────────────────────────────────────────────────
+  Per-citizen demand  ·  pop=100
+──────────────────────────────────────────────────────────────────────
+  bread       per_citizen=1.00/tick  total_at_pop=100/tick
+  food        per_citizen=1.00/tick  total_at_pop=100/tick
+──────────────────────────────────────────────────────────────────────
+  Per-tile production  ·  one production tile = 1 row of footprint
+──────────────────────────────────────────────────────────────────────
+  bread:
+     bakery             1x1  10.0/tile/tick  (workers=3; needs flour:2, wood:1)
+  cheese:
+     cheese_maker       1x1  6.00/tile/tick  (workers=4; needs livestock:2)
+  clay:
+     clay_pit           1x1  10.0/tile/tick  (workers=5)
+  fish:
+     fishery            2x2  2.00/tile/tick  (workers=6)
+  flour:
+     windmill           2x2  1.75/tile/tick  (workers=3; needs wheat:4)
+  food:
+     farm               2x2  2.00/tile/tick  (workers=6)
+  fruits:
+     orchard            2x2  2.00/tile/tick  (workers=5)
+  grapes:
+     vineyard           2x2  3.00/tile/tick  (workers=6)
+  honey:
+     beekeeper          1x1  4.00/tile/tick  (workers=3)
+  horses:
+     stable             2x2  0.50/tile/tick  (workers=5; needs wheat:3)
+  iron:
+     mine               1x1  6.00/tile/tick  (workers=8; needs wood:2)
+  livestock:
+     pasturage          2x2  1.50/tile/tick  (workers=5)
+  meat:
+     slaughterhouse     1x1  8.00/tile/tick  (workers=5; needs livestock:4)
+  money:
+     market             1x1  25.0/tile/tick  (workers=5; needs food:3)
+     port               2x2  7.50/tile/tick  (workers=8; needs wood:3)
+     factory            2x1  5.00/tile/tick  (workers=10; needs iron:3, wood:2)
+     senate             3x3  2.22/tile/tick  (workers=8)
+  oil:
+     olive_press        1x1  8.00/tile/tick  (workers=4; needs olives:4)
+  olives:
+     olive_farm         2x2  3.00/tile/tick  (workers=6)
+  planks:
+     sawmill            1x1  5.00/tile/tick  (workers=5; needs wood:3)
+  pottery:
+     pottery_workshop   1x1  6.00/tile/tick  (workers=4; needs clay:3)
+  spice:
+     spice_field        2x2  1.25/tile/tick  (workers=5)
+  stone:
+     quarry             2x2  1.25/tile/tick  (workers=6)
+  stone_blocks:
+     stonemason         1x1  4.00/tile/tick  (workers=5; needs stone:2)
+  tools:
+     factory            2x1  2.50/tile/tick  (workers=10; needs iron:3, wood:2)
+  vegetables:
+     vegetable_farm     2x2  2.50/tile/tick  (workers=6)
+  weapons:
+     weapon_smith       1x1  4.00/tile/tick  (workers=6; needs iron:3, wood:1)
+  wheat:
+     farm               2x2  3.00/tile/tick  (workers=6)
+  wine:
+     wine_press         1x1  8.00/tile/tick  (workers=4; needs grapes:4)
+  wood:
+     lumber_mill        1x1  8.00/tile/tick  (workers=4)
+──────────────────────────────────────────────────────────────────────
+  Citizens supported by ONE building at full capacity
+──────────────────────────────────────────────────────────────────────
+  bread:
+     bakery                10.0 citizens
+  food:
+     farm                  8.00 citizens
+──────────────────────────────────────────────────────────────────────
+  Buildings needed for pop=100 (1.0× and 1.5× safety margin)
+──────────────────────────────────────────────────────────────────────
+  bread       best producer: bakery          need ≥ 10.0 (safe: 15.0)
+  food        best producer: farm            need ≥ 12.5 (safe: 18.8)
+──────────────────────────────────────────────────────────────────────
+  Production chains  ·  producers per consumer (1.0 = balanced)
+──────────────────────────────────────────────────────────────────────
+  clay        clay_pit           →  pottery_workshop    ratio=0.30
+  fish        fishery            →  fishmonger          ratio=0.12  ← oversupply (one producer feeds many consumers)
+  flour       windmill           →  bakery              ratio=0.29
+  food        farm               →  market              ratio=0.38
+  food        farm               →  tavern              ratio=0.25
+  grapes      vineyard           →  wine_press          ratio=0.33
+  iron        mine               →  factory             ratio=0.50
+  iron        mine               →  weapon_smith        ratio=0.50
+  livestock   pasturage          →  cheese_maker        ratio=0.33
+  livestock   pasturage          →  slaughterhouse      ratio=0.67
+  meat        slaughterhouse     →  butcher_shop        ratio=0.12  ← oversupply (one producer feeds many consumers)
+  money       market             →  barracks            ratio=0.16  ← oversupply (one producer feeds many consumers)
+  money       factory            →  barracks            ratio=0.40
+  money       senate             →  barracks            ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       port               →  barracks            ratio=0.13  ← oversupply (one producer feeds many consumers)
+  money       market             →  clinic              ratio=0.12  ← oversupply (one producer feeds many consumers)
+  money       factory            →  clinic              ratio=0.30
+  money       senate             →  clinic              ratio=0.15  ← oversupply (one producer feeds many consumers)
+  money       port               →  clinic              ratio=0.10  ← oversupply (one producer feeds many consumers)
+  money       market             →  engineer_post       ratio=0.08  ← oversupply (one producer feeds many consumers)
+  money       factory            →  engineer_post       ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       senate             →  engineer_post       ratio=0.10  ← oversupply (one producer feeds many consumers)
+  money       port               →  engineer_post       ratio=0.07  ← oversupply (one producer feeds many consumers)
+  money       market             →  fort                ratio=0.24  ← oversupply (one producer feeds many consumers)
+  money       factory            →  fort                ratio=0.60
+  money       senate             →  fort                ratio=0.30
+  money       port               →  fort                ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       market             →  hospital            ratio=0.48
+  money       factory            →  hospital            ratio=1.20
+  money       senate             →  hospital            ratio=0.60
+  money       port               →  hospital            ratio=0.40
+  money       market             →  library             ratio=0.32
+  money       factory            →  library             ratio=0.80
+  money       senate             →  library             ratio=0.40
+  money       port               →  library             ratio=0.27
+  money       market             →  prefecture          ratio=0.08  ← oversupply (one producer feeds many consumers)
+  money       factory            →  prefecture          ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       senate             →  prefecture          ratio=0.10  ← oversupply (one producer feeds many consumers)
+  money       port               →  prefecture          ratio=0.07  ← oversupply (one producer feeds many consumers)
+  money       market             →  school              ratio=0.16  ← oversupply (one producer feeds many consumers)
+  money       factory            →  school              ratio=0.40
+  money       senate             →  school              ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       port               →  school              ratio=0.13  ← oversupply (one producer feeds many consumers)
+  money       market             →  temple              ratio=0.32
+  money       factory            →  temple              ratio=0.80
+  money       senate             →  temple              ratio=0.40
+  money       port               →  temple              ratio=0.27
+  money       market             →  theatre             ratio=0.20  ← oversupply (one producer feeds many consumers)
+  money       factory            →  theatre             ratio=0.50
+  money       senate             →  theatre             ratio=0.25
+  money       port               →  theatre             ratio=0.17  ← oversupply (one producer feeds many consumers)
+  olives      olive_farm         →  olive_press         ratio=0.33
+  stone       quarry             →  stonemason          ratio=0.40
+  weapons     weapon_smith       →  barracks            ratio=0.25
+  wheat       farm               →  stable              ratio=0.25
+  wheat       farm               →  windmill            ratio=0.33
+  wine        wine_press         →  tavern              ratio=0.12  ← oversupply (one producer feeds many consumers)
+  wood        lumber_mill        →  bakery              ratio=0.12  ← oversupply (one producer feeds many consumers)
+  wood        lumber_mill        →  factory             ratio=0.25
+  wood        lumber_mill        →  mine                ratio=0.25
+  wood        lumber_mill        →  port                ratio=0.38
+  wood        lumber_mill        →  sawmill             ratio=0.38
+  wood        lumber_mill        →  weapon_smith        ratio=0.12  ← oversupply (one producer feeds many consumers)
+──────────────────────────────────────────────────────────────────────
+  House tier requirements (from balance.py)
+──────────────────────────────────────────────────────────────────────
+  tier 0: services=—; goods=—; cap_mult=0.5; tax_mult=0.5
+  tier 1: services=food=0.5, water=0.5; goods=—; cap_mult=1.0; tax_mult=1.0
+  tier 2: services=food=1.0, water=1.0; goods=—; cap_mult=1.5; tax_mult=1.3
+  tier 3: services=education=0.5, food=1.0, religion=0.5, water=1.0; goods=oil; cap_mult=2.0; tax_mult=1.8
+  tier 4: services=education=1.0, entertainment=1.0, food=1.0, health=1.0, religion=1.0, water=1.0; goods=oil, planks, pottery; cap_mult=3.0; tax_mult=2.5
+──────────────────────────────────────────────────────────────────────
+  Done
+──────────────────────────────────────────────────────────────────────
+  Tip: rerun with --resource food (or wood, oil, …) to focus.
+  Edit data/buildings.json and balance.py, then rerun for a diff.

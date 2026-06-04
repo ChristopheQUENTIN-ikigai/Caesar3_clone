@@ -1,0 +1,748 @@
+--- orig/version.py
++++ caesar3/version.py
+@@ -18,4 +18,4 @@
+ 
+ # Bump on every release. Anything that wants to display the version
+ # imports VERSION from here rather than hard-coding the literal.
+-VERSION: str = "v0.54"
++VERSION: str = "v0.56"
+--- orig/game_map.py
++++ caesar3/game_map.py
+@@ -135,6 +135,26 @@
+         # for any data file that doesn't set the new field.
+         self.construction_progress: dict[tuple[int, int], int] = {}
+ 
++        # v0.56: cached render layers. The terrain and feature layers are
++        # almost entirely static, yet the old _draw_terrain re-issued one
++        # immediate-mode draw call PER TILE PER FRAME (~2,400 on a 40×30
++        # map, ~8,000 on a 64×64 editor map) plus a line per grid edge.
++        # We now build arcade SpriteLists once and let the GPU batch them
++        # in a single draw call each, rebuilding lazily only when terrain
++        # or features actually change (see invalidate_render_cache). Tiles
++        # whose texture is missing (no PNG shipped — common in tests and
++        # the placeholder asset set) fall back to the original colour/
++        # glyph path, so textureless environments render identically.
++        self._terrain_sprites: "arcade.SpriteList | None" = None
++        self._feature_sprites: "arcade.SpriteList | None" = None
++        self._grid_shapes = None
++        # Tiles handled by the colour/glyph fallback (no texture). Built
++        # alongside the sprite lists; iterated (culled to the viewport)
++        # only when non-empty, so a fully-textured map pays nothing here.
++        self._fallback_terrain: list[tuple[int, int, int]] = []
++        self._fallback_features: list[tuple[int, int, str]] = []
++        self._render_cache_dirty: bool = True
++
+     # ── Terrain ───────────────────────────────────────────────────────────
+     def _generate_terrain(self) -> None:
+         for r in range(self.rows):
+@@ -579,6 +599,8 @@
+             return
+         self.terrain_features[row][col] = None
+         self.terrain_feature_state.pop((row, col), None)
++        # v0.56: a feature sprite disappeared — refresh the cached layers.
++        self.invalidate_render_cache()
+ 
+     def all_footprint_features_depleted(
+         self, row: int, col: int, building: Building, feature: str,
+@@ -1382,6 +1404,9 @@
+             r, c, ticks = int(entry[0]), int(entry[1]), int(entry[2])
+             if 0 <= r < self.rows and 0 <= c < self.cols:
+                 self.construction_progress[(r, c)] = ticks
++        # v0.56: terrain and features were just replaced wholesale — the
++        # cached render layers must rebuild on the next draw.
++        self.invalidate_render_cache()
+ 
+     # ── Drawing ───────────────────────────────────────────────────────────
+     def draw(
+@@ -1389,126 +1414,218 @@
+         hover_row: int | None = None,
+         hover_col: int | None = None,
+         selected_building: str | None = None,
++        visible_bounds: tuple[int, int, int, int] | None = None,
+     ) -> None:
+-        self._draw_terrain()
++        """Render the map.
++
++        ``visible_bounds`` is an optional ``(min_row, max_row, min_col,
++        max_col)`` inclusive tile window. It culls the colour/glyph
++        fallback pass to on-screen tiles only; the SpriteList path is
++        already GPU-batched and needs no manual culling. ``None`` draws
++        every tile (the behaviour the test suite and minimap rely on).
++        """
++        self._draw_terrain(visible_bounds)
+         self._draw_grid_lines()
+         self._draw_buildings()
+         self._draw_hover(hover_row, hover_col, selected_building)
+ 
+-    def _draw_terrain(self) -> None:
++    # ── v0.56: cached render layers ───────────────────────────────────────
++    def invalidate_render_cache(self) -> None:
++        """Mark the cached terrain/feature/grid layers stale.
++
++        Called whenever terrain or features change — feature depletion,
++        editor painting, or a fresh map load. The next ``draw`` rebuilds
++        the SpriteLists lazily. Cheap to call repeatedly; only the first
++        call after a draw does any work.
++        """
++        self._render_cache_dirty = True
++
++    def _build_render_cache(self) -> None:
++        """(Re)build the terrain + feature SpriteLists, the grid-line
++        shape list, and the colour/glyph fallback tile lists.
++
++        Tiles whose texture is present become batched sprites; tiles
++        without a texture are recorded for the immediate-mode fallback
++        so textureless environments (tests, partial asset sets) render
++        exactly as before. Building this is O(rows×cols) but happens
++        only on change, not every frame.
++        """
++        # arcade may be a lightweight stub in headless tests; guard the
++        # whole sprite path so a stub without SpriteList still works via
++        # the fallback lists (which need no GPU objects until drawn).
++        make_sprites = hasattr(arcade, "SpriteList") and hasattr(arcade, "Sprite")
++        terrain_sl = arcade.SpriteList() if make_sprites else None
++        feature_sl = arcade.SpriteList() if make_sprites else None
++        fb_terrain: list[tuple[int, int, int]] = []
++        fb_features: list[tuple[int, int, str]] = []
++
+         half = TILE_SIZE / 2
+         for r in range(self.rows):
+             for c in range(self.cols):
+-                x, y = self.grid_to_world(r, c)
+                 t = self.terrain[r][c]
++                cx = c * TILE_SIZE + half
++                cy = r * TILE_SIZE + half
+                 tex = self.textures.terrain(_TERRAIN_TEX_NAMES.get(t, "grass"))
+-                if tex is not None:
+-                    arcade.draw_texture_rect(
+-                        tex,
+-                        arcade.LBWH(x, y, TILE_SIZE, TILE_SIZE),
+-                    )
++                if tex is not None and terrain_sl is not None:
++                    spr = arcade.Sprite(tex, center_x=cx, center_y=cy)
++                    spr.width = TILE_SIZE
++                    spr.height = TILE_SIZE
++                    terrain_sl.append(spr)
+                 else:
+-                    # v0.15: hills/mountains added to the colour fallback.
+-                    # Without textures, all five terrains still render
+-                    # distinctly so the player can read the map.
+-                    if t == TERRAIN_WATER:
+-                        color = COLOR_WATER
+-                    elif t == TERRAIN_GRASS_ALT:
+-                        color = COLOR_GRASS_ALT
+-                    elif t == TERRAIN_HILLS:
+-                        color = COLOR_HILLS
+-                    elif t == TERRAIN_MOUNTAINS:
+-                        color = COLOR_MOUNTAINS
+-                    elif t == TERRAIN_DESERT:
+-                        color = COLOR_DESERT
+-                    else:
+-                        color = COLOR_GRASS
+-                    arcade.draw_lrbt_rectangle_filled(
+-                        x, x + TILE_SIZE, y, y + TILE_SIZE, color
+-                    )
+-                    # v0.15: mountain silhouette overlay so a mountain
+-                    # tile reads at-a-glance even without a sprite.
+-                    # Drawn after the colour fill, before features.
+-                    if t == TERRAIN_MOUNTAINS:
+-                        cx = x + half
+-                        cy = y + half
+-                        # Two overlapping dark triangles → "two peaks".
+-                        arcade.draw_triangle_filled(
+-                            cx - 8, cy - 8,
+-                            cx + 4, cy - 8,
+-                            cx - 2, cy + 8,
+-                            (60, 50, 45),
+-                        )
+-                        arcade.draw_triangle_filled(
+-                            cx - 2, cy - 8,
+-                            cx + 10, cy - 8,
+-                            cx + 4, cy + 6,
+-                            (75, 65, 60),
+-                        )
+-                    elif t == TERRAIN_HILLS:
+-                        cx = x + half
+-                        cy = y + half
+-                        # Two small bumps — a low mound profile.
+-                        arcade.draw_arc_filled(
+-                            cx - 4, cy - 2, 8, 6,
+-                            (70, 80, 55), 0, 180,
+-                        )
+-                        arcade.draw_arc_filled(
+-                            cx + 4, cy - 2, 8, 6,
+-                            (70, 80, 55), 0, 180,
+-                        )
+-                # v0.13: terrain feature overlay. Until v0.23.x this was
+-                # drawn as a small glyph (triangle for forest, dots for
+-                # fertile soil, circle for ore / stone / water) regardless
+-                # of whether the player had shipped natural-resource
+-                # textures in ``assets/textures/natural/``. The art was
+-                # there, but the renderer ignored it.
+-                #
+-                # v0.23.x: prefer the texture when one is available. The
+-                # registry tries ``terrain/`` → ``natural/`` → ``features/``
+-                # in that order (see TextureRegistry.feature). The
+-                # placeholder generator writes into ``natural/`` so a
+-                # fresh checkout already has art for forest, fertile_soil,
+-                # groundwater, and every ore vein. Glyphs remain the
+-                # fallback for buildings shipped without art.
++                    fb_terrain.append((r, c, t))
++
+                 feat = self.terrain_features[r][c]
+                 if feat is not None:
+                     feat_tex = self.textures.feature(feat)
+-                    if feat_tex is not None:
+-                        # Texture path: draw the natural-resource sprite
+-                        # over the grass tile, filling the whole cell.
+-                        # The texture is expected to have its own alpha
+-                        # channel so the grass shows through transparent
+-                        # pixels (e.g. between trees on a forest tile).
+-                        arcade.draw_texture_rect(
+-                            feat_tex,
+-                            arcade.LBWH(x, y, TILE_SIZE, TILE_SIZE),
+-                        )
++                    if feat_tex is not None and feature_sl is not None:
++                        spr = arcade.Sprite(feat_tex, center_x=cx, center_y=cy)
++                        spr.width = TILE_SIZE
++                        spr.height = TILE_SIZE
++                        feature_sl.append(spr)
+                     else:
+-                        # Fallback: glyph rendering (legacy behaviour).
+-                        fc = FEATURE_COLORS.get(feat)
+-                        if fc is not None:
+-                            cx = x + half
+-                            cy = y + half
+-                            if feat == FEATURE_FOREST:
+-                                # Triangle pointing up — tree silhouette.
+-                                arcade.draw_triangle_filled(
+-                                    cx, cy + 8,
+-                                    cx - 6, cy - 4,
+-                                    cx + 6, cy - 4,
+-                                    fc,
+-                                )
+-                            elif feat == FEATURE_FERTILE_SOIL:
+-                                # Three small dots in a triangle — "rich soil".
+-                                for dx, dy in ((-4, -3), (4, -3), (0, 4)):
+-                                    arcade.draw_circle_filled(
+-                                        cx + dx, cy + dy, 1.5, fc,
+-                                    )
+-                            else:
+-                                # Generic round marker for ore / stone / water.
+-                                arcade.draw_circle_filled(cx, cy, 4, fc)
++                        fb_features.append((r, c, feat))
++
++        self._terrain_sprites = terrain_sl
++        self._feature_sprites = feature_sl
++        self._fallback_terrain = fb_terrain
++        self._fallback_features = fb_features
++        self._build_grid_shapes()
++        self._render_cache_dirty = False
++
++    def _build_grid_shapes(self) -> None:
++        """Bake the grid lines into a single batched ShapeElementList.
++
++        Grid geometry only changes when the map is resized, so it lives
++        in the render cache and is rebuilt alongside the tile sprites.
++        Falls back to ``None`` (immediate-mode lines at draw time) if the
++        arcade build in use lacks the shape API.
++        """
++        create_lines = getattr(arcade.shape_list, "create_lines", None) \
++            if hasattr(arcade, "shape_list") else None
++        if create_lines is None or not hasattr(arcade, "shape_list"):
++            self._grid_shapes = None
++            return
++        total_w = self.cols * TILE_SIZE
++        total_h = self.rows * TILE_SIZE
++        points: list[tuple[float, float]] = []
++        for r in range(self.rows + 1):
++            yy = r * TILE_SIZE
++            points.append((0, yy))
++            points.append((total_w, yy))
++        for c in range(self.cols + 1):
++            xx = c * TILE_SIZE
++            points.append((xx, 0))
++            points.append((xx, total_h))
++        try:
++            sl = arcade.shape_list.ShapeElementList()
++            sl.append(create_lines(points, COLOR_GRID_LINE, line_width=1))
++            self._grid_shapes = sl
++        except Exception:
++            self._grid_shapes = None
++
++    def _draw_terrain(
++        self, visible_bounds: tuple[int, int, int, int] | None = None,
++    ) -> None:
++        if self._render_cache_dirty:
++            self._build_render_cache()
++
++        # Batched textured layers — one GPU draw call each.
++        if self._terrain_sprites is not None:
++            self._terrain_sprites.draw()
++        if self._feature_sprites is not None:
++            self._feature_sprites.draw()
++
++        # Immediate-mode fallback for textureless tiles, culled to the
++        # viewport when bounds are supplied. A fully-textured map has
++        # empty fallback lists and pays nothing here.
++        if self._fallback_terrain:
++            self._draw_fallback_terrain(visible_bounds)
++        if self._fallback_features:
++            self._draw_fallback_features(visible_bounds)
++
++    @staticmethod
++    def _in_bounds(
++        r: int, c: int, b: tuple[int, int, int, int] | None,
++    ) -> bool:
++        if b is None:
++            return True
++        return b[0] <= r <= b[1] and b[2] <= c <= b[3]
++
++    def _draw_fallback_terrain(
++        self, b: tuple[int, int, int, int] | None,
++    ) -> None:
++        half = TILE_SIZE / 2
++        for r, c, t in self._fallback_terrain:
++            if not self._in_bounds(r, c, b):
++                continue
++            x, y = c * TILE_SIZE, r * TILE_SIZE
++            # v0.15: hills/mountains added to the colour fallback so all
++            # five terrains read distinctly even without sprites.
++            if t == TERRAIN_WATER:
++                color = COLOR_WATER
++            elif t == TERRAIN_GRASS_ALT:
++                color = COLOR_GRASS_ALT
++            elif t == TERRAIN_HILLS:
++                color = COLOR_HILLS
++            elif t == TERRAIN_MOUNTAINS:
++                color = COLOR_MOUNTAINS
++            elif t == TERRAIN_DESERT:
++                color = COLOR_DESERT
++            else:
++                color = COLOR_GRASS
++            arcade.draw_lrbt_rectangle_filled(
++                x, x + TILE_SIZE, y, y + TILE_SIZE, color
++            )
++            if t == TERRAIN_MOUNTAINS:
++                cx, cy = x + half, y + half
++                # Two overlapping dark triangles → "two peaks".
++                arcade.draw_triangle_filled(
++                    cx - 8, cy - 8, cx + 4, cy - 8, cx - 2, cy + 8,
++                    (60, 50, 45),
++                )
++                arcade.draw_triangle_filled(
++                    cx - 2, cy - 8, cx + 10, cy - 8, cx + 4, cy + 6,
++                    (75, 65, 60),
++                )
++            elif t == TERRAIN_HILLS:
++                cx, cy = x + half, y + half
++                # Two small bumps — a low mound profile.
++                arcade.draw_arc_filled(cx - 4, cy - 2, 8, 6, (70, 80, 55), 0, 180)
++                arcade.draw_arc_filled(cx + 4, cy - 2, 8, 6, (70, 80, 55), 0, 180)
++
++    def _draw_fallback_features(
++        self, b: tuple[int, int, int, int] | None,
++    ) -> None:
++        half = TILE_SIZE / 2
++        for r, c, feat in self._fallback_features:
++            if not self._in_bounds(r, c, b):
++                continue
++            fc = FEATURE_COLORS.get(feat)
++            if fc is None:
++                continue
++            cx = c * TILE_SIZE + half
++            cy = r * TILE_SIZE + half
++            if feat == FEATURE_FOREST:
++                # Triangle pointing up — tree silhouette.
++                arcade.draw_triangle_filled(
++                    cx, cy + 8, cx - 6, cy - 4, cx + 6, cy - 4, fc,
++                )
++            elif feat == FEATURE_FERTILE_SOIL:
++                # Three small dots in a triangle — "rich soil".
++                for dx, dy in ((-4, -3), (4, -3), (0, 4)):
++                    arcade.draw_circle_filled(cx + dx, cy + dy, 1.5, fc)
++            else:
++                # Generic round marker for ore / stone / water.
++                arcade.draw_circle_filled(cx, cy, 4, fc)
+ 
+     def _draw_grid_lines(self) -> None:
++        if self._render_cache_dirty:
++            self._build_render_cache()
++        if self._grid_shapes is not None:
++            self._grid_shapes.draw()
++            return
++        # Fallback: immediate-mode lines (arcade build without shape_list,
++        # or a headless stub). Same look as the pre-v0.56 renderer.
+         total_w = self.cols * TILE_SIZE
+         total_h = self.rows * TILE_SIZE
+         for r in range(self.rows + 1):
+--- orig/walkers.py
++++ caesar3/walkers.py
+@@ -285,7 +285,9 @@
+                     return
+         self.idle = 5
+ 
+-    def update(self, game_map: GameMap) -> None:
++    def update(self, game_map: GameMap, dt_scale: float = 1.0) -> None:
++        # ``dt_scale`` (v0.56) scales the per-frame progress increment so
++        # motion is frame-rate independent; default 1.0 == one tick step.
+         if self.idle > 0:
+             self.idle -= 1
+             if self.idle <= 0:
+@@ -294,7 +296,7 @@
+         if self.row == self.target_row and self.col == self.target_col:
+             self.pick_target(game_map)
+             return
+-        self.progress += self.speed
++        self.progress += self.speed * dt_scale
+         if self.progress >= 1.0:
+             self.row, self.col = self.target_row, self.target_col
+             self.progress = 0.0
+@@ -387,13 +389,15 @@
+             return
+         self.target_row, self.target_col = self._path[self._path_idx]
+ 
+-    def update(self, game_map: GameMap) -> None:
++    def update(self, game_map: GameMap, dt_scale: float = 1.0) -> None:
++        # ``dt_scale`` (v0.56) scales the per-frame progress increment so
++        # motion is frame-rate independent; default 1.0 == one tick step.
+         if self.done:
+             return
+         if self.row == self.target_row and self.col == self.target_col:
+             self.pick_target(game_map)
+             return
+-        self.progress += self.speed
++        self.progress += self.speed * dt_scale
+         if self.progress >= 1.0:
+             self.row, self.col = self.target_row, self.target_col
+             self.progress = 0.0
+@@ -504,13 +508,15 @@
+             return
+         self.target_row, self.target_col = self._path[self._path_idx]
+ 
+-    def update(self, game_map: GameMap) -> None:
++    def update(self, game_map: GameMap, dt_scale: float = 1.0) -> None:
++        # ``dt_scale`` (v0.56) scales the per-frame progress increment so
++        # motion is frame-rate independent; default 1.0 == one tick step.
+         if self.done:
+             return
+         if self.row == self.target_row and self.col == self.target_col:
+             self.pick_target(game_map)
+             return
+-        self.progress += self.speed
++        self.progress += self.speed * dt_scale
+         if self.progress >= 1.0:
+             self.row, self.col = self.target_row, self.target_col
+             self.progress = 0.0
+@@ -1849,7 +1855,73 @@
+             if isinstance(w, Fireman) and w.home_row == hr and w.home_col == hc
+         )
+ 
+-    def update(self, game_map: GameMap, economy) -> None:  # noqa: ANN001
++    def update_movement(
++        self, game_map: GameMap, dt_scale: float = 1.0,
++    ) -> None:
++        """Advance every walker's position. Frame-cadence work only.
++
++        Split out of :meth:`update` (v0.56) so the game window can call
++        it once per *rendered frame* for smooth motion, while the heavy
++        simulation logic — spawning, dispatch, combat, fire, ships,
++        reaping — runs once per *game tick* in :meth:`update`.
++
++        ``dt_scale`` decouples motion from frame rate. Each walker's
++        ``speed`` is calibrated as "progress per tick"; multiplying the
++        per-frame increment by ``dt_scale = frame_dt / tick_period``
++        means a walker covers the same ground per simulated second
++        whether the display runs at 30, 60, or 144 fps. Passing the
++        default ``1.0`` reproduces the original "one step == one tick"
++        behaviour the test suite and headless harnesses expect.
++
++        Pick-target decisions stay here (not in the tick step) because a
++        walker that reaches its target mid-frame must choose its next
++        one immediately or it stalls visibly until the next tick.
++        """
++        # Soldiers need world context (enemy positions); everyone else
++        # uses their own pick_target.
++        enemies = [w for w in self.walkers if isinstance(w, Enemy)]
++        for w in self.walkers:
++            if isinstance(w, Soldier):
++                if w.row == w.target_row and w.col == w.target_col:
++                    w.pick_target_with_world(game_map, enemies)
++                if w.idle > 0:
++                    # Idle is a tick-counter; only decrement it on a full
++                    # tick (dt_scale >= 1.0) so a soldier doesn't burn its
++                    # idle window faster at high frame rates.
++                    w.idle -= 1
++                    if w.idle <= 0:
++                        w.pick_target_with_world(game_map, enemies)
++                else:
++                    w.progress += w.speed * dt_scale
++                    if w.progress >= 1.0:
++                        w.row, w.col = w.target_row, w.target_col
++                        w.progress = 0.0
++            else:
++                w.update(game_map, dt_scale)
++            if isinstance(w, DeliveryWalker) and not w.done:
++                self._record_delivery_radius(game_map, w)
++                # v0.19.x: deposit on the goods-flow heatmap. Done
++                # after movement so the deposit lands on the tile the
++                # walker now occupies — the visual matches what the
++                # player sees on screen.
++                key = (w.row, w.col)
++                self._flow_heat[key] = (
++                    self._flow_heat.get(key, 0.0) + self.FLOW_DEPOSIT
++                )
++
++    def update(
++        self, game_map: GameMap, economy, move: bool = True,  # noqa: ANN001
++    ) -> None:
++        """Run one game *tick* of walker simulation.
++
++        ``move`` (v0.56) controls whether this also advances positions.
++        The real-time game window drives motion separately, once per
++        rendered frame, via :meth:`update_movement`, so it calls this
++        with ``move=False`` to avoid double-stepping. Headless harnesses
++        and the test suite tick via ``update`` alone and rely on the
++        default ``move=True`` for a complete "one call == one tick"
++        step, movement included.
++        """
+         # Reset per-tick scratch.
+         self._fresh_deliveries.clear()
+         self._combat_events.clear()
+@@ -1900,34 +1972,14 @@
+             self.fireman_timer = 0
+             self._dispatch_firemen(game_map)
+ 
+-        # 5. Per-walker movement. Soldiers need world context; everyone
+-        # else uses their own pick_target.
+-        enemies = [w for w in self.walkers if isinstance(w, Enemy)]
+-        for w in self.walkers:
+-            if isinstance(w, Soldier):
+-                if w.row == w.target_row and w.col == w.target_col:
+-                    w.pick_target_with_world(game_map, enemies)
+-                if w.idle > 0:
+-                    w.idle -= 1
+-                    if w.idle <= 0:
+-                        w.pick_target_with_world(game_map, enemies)
+-                else:
+-                    w.progress += w.speed
+-                    if w.progress >= 1.0:
+-                        w.row, w.col = w.target_row, w.target_col
+-                        w.progress = 0.0
+-            else:
+-                w.update(game_map)
+-            if isinstance(w, DeliveryWalker) and not w.done:
+-                self._record_delivery_radius(game_map, w)
+-                # v0.19.x: deposit on the goods-flow heatmap. Done
+-                # after movement so the deposit lands on the tile the
+-                # walker now occupies — the visual matches what the
+-                # player sees on screen.
+-                key = (w.row, w.col)
+-                self._flow_heat[key] = (
+-                    self._flow_heat.get(key, 0.0) + self.FLOW_DEPOSIT
+-                )
++        # 5. Per-walker movement. Extracted to ``update_movement`` so the
++        # game window can drive it once per *frame* (visual smoothness)
++        # independently of the per-*tick* simulation logic in this method.
++        # ``move`` lets the real-time window skip it here (it calls
++        # update_movement itself each frame); headless/test callers keep
++        # the default so ``update`` remains a complete tick step.
++        if move:
++            self.update_movement(game_map)
+ 
+         # v0.19.x: decay the goods-flow heatmap after deposits. Multiply
+         # every cell by FLOW_DECAY and prune anything below the epsilon
+--- orig/game_window.py
++++ caesar3/game_window.py
+@@ -1092,21 +1092,37 @@
+         if self.paused or self.show_menu:
+             return
+ 
+-        # ── Economy ticks ─────────────────────────────────────────────────
++        # ── Economy + per-tick simulation ─────────────────────────────────
+         self.tick_accumulator += delta_time * self.speed_multiplier
+         tick_period = 1.0 / TICKS_PER_SECOND
+         while self.tick_accumulator >= tick_period:
+             self.tick_accumulator -= tick_period
+             with self.profiler.section("game_tick"):
+                 self._game_tick()
++            # v0.56: the walker manager's heavy logic — spawning,
++            # dispatch, raids, combat, fire, ships, reaping — is
++            # per-TICK work and now runs inside the tick loop, not once
++            # per frame. Previously it ran every frame, so its cadence
++            # (and CPU cost) silently tracked the display's frame rate
++            # and ignored speed_multiplier. Movement is handled
++            # separately below for visual smoothness.
++            with self.profiler.section("walkers.update"):
++                self.walker_manager.update(
++                    self.game_map, self.economy, move=False,
++                )
++            self.house_evolution.record_deliveries(self.game_time)
+ 
+-        # Walkers update every frame for visual smoothness; house evolution
+-        # only checks on game ticks. Record deliveries every frame so the
+-        # supply memory captures all of a walker's pass-bys, not just the
+-        # ones that happen to coincide with a game tick.
+-        with self.profiler.section("walkers.update"):
+-            self.walker_manager.update(self.game_map, self.economy)
+-        self.house_evolution.record_deliveries(self.game_time)
++        # ── Walker movement: per-FRAME for smooth motion ──────────────────
++        # v0.56: only positions advance every frame. ``dt_scale`` is the
++        # fraction of a game tick elapsed this frame (frame seconds ×
++        # game speed ÷ tick period), so a walker crosses a tile in the
++        # same number of *ticks* at 30, 60, or 144 fps, and game speed
++        # scales motion proportionally. Record deliveries every frame so
++        # the supply memory captures all of a walker's pass-bys, not just
++        # the ones that land on a tick boundary.
++        with self.profiler.section("walkers.movement"):
++            dt_scale = (delta_time * self.speed_multiplier) / tick_period
++            self.walker_manager.update_movement(self.game_map, dt_scale)
+ 
+     # ── v0.14: feature depletion tap ──────────────────────────────────────
+     def _feature_tap(
+@@ -1459,6 +1475,41 @@
+     # ══════════════════════════════════════════════════════════════════════
+     #  DRAW
+     # ══════════════════════════════════════════════════════════════════════
++    def _visible_tile_bounds(self) -> tuple[int, int, int, int] | None:
++        """v0.56: inclusive ``(min_row, max_row, min_col, max_col)`` tile
++        window currently on screen, for culling the map's colour/glyph
++        fallback pass. Returns ``None`` (draw everything) if the camera
++        geometry can't be read — safer to over-draw than to clip the map.
++
++        The textured SpriteList path ignores this (the GPU batches and
++        culls it); only the immediate-mode fallback, used when terrain
++        textures are missing, benefits — but that's exactly the case
++        where per-tile draw calls hurt, so it's worth computing.
++        """
++        cam = getattr(self, "world_camera", None)
++        if cam is None:
++            return None
++        try:
++            cx, cy = cam.position
++            zoom = getattr(cam, "zoom", 1.0) or 1.0
++            half_w = (self.width / zoom) / 2.0
++            half_h = (self.height / zoom) / 2.0
++            pad = 1  # one-tile margin so edge tiles never pop in late
++            min_c = int((cx - half_w) // TILE_SIZE) - pad
++            max_c = int((cx + half_w) // TILE_SIZE) + pad
++            min_r = int((cy - half_h) // TILE_SIZE) - pad
++            max_r = int((cy + half_h) // TILE_SIZE) + pad
++            min_r = max(0, min_r)
++            min_c = max(0, min_c)
++            max_r = min(self.game_map.rows - 1, max_r)
++            max_c = min(self.game_map.cols - 1, max_c)
++            if min_r > max_r or min_c > max_c:
++                # Camera entirely off the map — nothing to draw.
++                return (0, -1, 0, -1)
++            return (min_r, max_r, min_c, max_c)
++        except Exception:
++            return None
++
+     def on_draw(self) -> None:
+         self.clear()
+ 
+@@ -1477,7 +1528,10 @@
+         # World layer
+         self.world_camera.use()
+         with self.profiler.section("map.draw"):
+-            self.game_map.draw(self.hover_row, self.hover_col, self.selected_building)
++            self.game_map.draw(
++                self.hover_row, self.hover_col, self.selected_building,
++                visible_bounds=self._visible_tile_bounds(),
++            )
+         with self.profiler.section("walkers.draw"):
+             self.walker_manager.draw()
+         # v0.44: ship route debug overlay (toggle key 'P'). Drawn in
+--- orig/mixins/map_editor.py
++++ caesar3/mixins/map_editor.py
+@@ -1183,6 +1183,7 @@
+             # tile would render confusingly.
+             if int(payload) in (TERRAIN_WATER, TERRAIN_MOUNTAINS, TERRAIN_DESERT):
+                 self.game_map.terrain_features[row][col] = None
++            self.game_map.invalidate_render_cache()  # v0.56
+             log.info("Editor: painted terrain %s at (%d,%d)", payload, row, col)
+             return True
+         if kind == "feature":
+@@ -1206,6 +1207,7 @@
+             # the procedural generator uses), with a sensible None
+             # fallback for inexhaustible features.
+             self._seed_feature_reserves(row, col, str(payload))
++            self.game_map.invalidate_render_cache()  # v0.56
+             log.info("Editor: painted feature %s at (%d,%d)", payload, row, col)
+             return True
+         if kind == "clear_feature":
+@@ -1214,6 +1216,7 @@
+             # repaint of the same tile would see stale `initial` /
+             # `reserves` values from the old feature kind.
+             self.game_map.terrain_feature_state.pop((row, col), None)
++            self.game_map.invalidate_render_cache()  # v0.56
+             log.info("Editor: cleared feature at (%d,%d)", row, col)
+             return True
+         return False
+--- orig/tests/test_v023x_features.py
++++ caesar3/tests/test_v023x_features.py
+@@ -68,10 +68,18 @@
+ def test_game_map_draw_terrain_method_uses_feature_textures(
+     monkeypatch: pytest.MonkeyPatch,
+ ) -> None:
+-    """``_draw_terrain`` must call ``textures.feature(feat)`` for every
++    """``_draw_terrain`` must consult ``textures.feature(feat)`` for every
+     feature-bearing tile rather than going straight to the glyph
+-    fallback. We monkey-patch ``draw_texture_rect`` and
+-    ``feature`` to count the calls — no GL needed."""
++    fallback.
++
++    v0.56: the texture lookup moved from per-frame ``_draw_terrain`` into
++    the cached ``_build_render_cache`` (built lazily on the first draw and
++    reused until terrain/features change). ``feature()`` is still called
++    for every feature tile — just once at cache-build time instead of
++    every frame — so the contract this test guards is unchanged. We stub
++    the SpriteList / Sprite / shape-list constructors so the cache build
++    needs no GL context, and spy on ``feature`` to confirm the registry
++    is consulted."""
+     reg = BuildingRegistry.from_json_file(BUILDINGS_PATH)
+     gm = GameMap(reg)
+     # Plant exactly one forest tile so the count is deterministic.
+@@ -88,9 +96,39 @@
+         return real_feature(fid)
+ 
+     monkeypatch.setattr(gm.textures, "feature", spy_feature)
+-    # Stub arcade.draw_* so no GL is required. We only care that the
+-    # registry was consulted.
++
++    # Stub arcade so no GL is required. The textures resolve to real
++    # Texture objects (the placeholder asset set ships PNGs), so the
++    # cache build takes the batched-sprite path; we replace SpriteList
++    # and Sprite with inert fakes whose .draw() is a no-op. Grid lines
++    # bake into a ShapeElementList — stub that too. The immediate-mode
++    # draw_* funcs are stubbed for the textureless fallback path.
+     import arcade
++
++    class _FakeSpriteList:
++        def __init__(self, *a, **k):
++            self._items = []
++
++        def append(self, item):
++            self._items.append(item)
++
++        def draw(self, *a, **k):
++            return None
++
++    class _FakeSprite:
++        def __init__(self, *a, **k):
++            self.width = 0
++            self.height = 0
++
++    monkeypatch.setattr(arcade, "SpriteList", _FakeSpriteList)
++    monkeypatch.setattr(arcade, "Sprite", _FakeSprite)
++    if hasattr(arcade, "shape_list"):
++        monkeypatch.setattr(
++            arcade.shape_list, "create_lines", lambda *a, **k: object(),
++        )
++        monkeypatch.setattr(
++            arcade.shape_list, "ShapeElementList", _FakeSpriteList,
++        )
+     monkeypatch.setattr(arcade, "draw_texture_rect", lambda *a, **k: None)
+     monkeypatch.setattr(arcade, "draw_lrbt_rectangle_filled", lambda *a, **k: None)
+     monkeypatch.setattr(arcade, "draw_lrbt_rectangle_outline", lambda *a, **k: None)
