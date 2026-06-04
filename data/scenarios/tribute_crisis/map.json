@@ -1,0 +1,2636 @@
+{
+  "version": 1,
+  "name": "The Tribute Crisis",
+  "scenario": "tribute_crisis",
+  "nutrients": {
+    "bread": 50,
+    "vegetables": 20,
+    "fruits": 10,
+    "meat": 0,
+    "fish": 5,
+    "cheese": 0,
+    "oil": 0,
+    "honey": 0,
+    "spice": 0,
+    "wine": 0
+  },
+  "population": 60,
+  "workers": {
+    "worker": 30,
+    "trader": 5,
+    "soldier": 5,
+    "citizen": 20
+  },
+  "treasury": 1200,
+  "stocks": {
+    "stone": 80,
+    "stone_blocks": 30,
+    "iron": 40,
+    "wood": 200,
+    "tools": 30,
+    "planks": 15,
+    "wheat": 60,
+    "flour": 20,
+    "weapons": 10,
+    "olives": 0,
+    "grapes": 0,
+    "clay": 10,
+    "pottery": 5,
+    "livestock": 0,
+    "horses": 0
+  },
+  "army": {
+    "infantry": 5,
+    "cavalry": 0
+  },
+  "calendar": {
+    "year": 1,
+    "month": 1
+  },
+  "grid": {
+    "width": 30,
+    "height": 30
+  },
+  "terrain": [
+    [
+      4,
+      2,
+      3
+    ],
+    [
+      4,
+      3,
+      3
+    ],
+    [
+      4,
+      4,
+      3
+    ],
+    [
+      4,
+      5,
+      3
+    ],
+    [
+      4,
+      6,
+      3
+    ],
+    [
+      4,
+      7,
+      3
+    ],
+    [
+      4,
+      8,
+      3
+    ],
+    [
+      4,
+      9,
+      3
+    ],
+    [
+      4,
+      10,
+      3
+    ],
+    [
+      4,
+      11,
+      3
+    ],
+    [
+      4,
+      12,
+      3
+    ],
+    [
+      4,
+      13,
+      3
+    ],
+    [
+      4,
+      14,
+      3
+    ],
+    [
+      4,
+      15,
+      3
+    ],
+    [
+      4,
+      16,
+      3
+    ],
+    [
+      4,
+      17,
+      3
+    ],
+    [
+      4,
+      18,
+      3
+    ],
+    [
+      4,
+      19,
+      3
+    ],
+    [
+      4,
+      20,
+      3
+    ],
+    [
+      4,
+      21,
+      3
+    ],
+    [
+      4,
+      22,
+      3
+    ],
+    [
+      4,
+      23,
+      3
+    ],
+    [
+      4,
+      24,
+      3
+    ],
+    [
+      4,
+      25,
+      3
+    ],
+    [
+      4,
+      26,
+      3
+    ],
+    [
+      4,
+      27,
+      3
+    ],
+    [
+      4,
+      28,
+      3
+    ],
+    [
+      4,
+      29,
+      3
+    ],
+    [
+      5,
+      2,
+      3
+    ],
+    [
+      5,
+      3,
+      3
+    ],
+    [
+      5,
+      4,
+      3
+    ],
+    [
+      5,
+      5,
+      3
+    ],
+    [
+      5,
+      6,
+      3
+    ],
+    [
+      5,
+      7,
+      3
+    ],
+    [
+      5,
+      8,
+      3
+    ],
+    [
+      5,
+      9,
+      3
+    ],
+    [
+      5,
+      10,
+      3
+    ],
+    [
+      5,
+      11,
+      3
+    ],
+    [
+      5,
+      12,
+      3
+    ],
+    [
+      5,
+      13,
+      3
+    ],
+    [
+      5,
+      14,
+      3
+    ],
+    [
+      5,
+      15,
+      3
+    ],
+    [
+      5,
+      16,
+      3
+    ],
+    [
+      5,
+      17,
+      3
+    ],
+    [
+      5,
+      18,
+      3
+    ],
+    [
+      5,
+      19,
+      3
+    ],
+    [
+      5,
+      20,
+      3
+    ],
+    [
+      5,
+      21,
+      3
+    ],
+    [
+      5,
+      22,
+      3
+    ],
+    [
+      5,
+      23,
+      3
+    ],
+    [
+      5,
+      24,
+      3
+    ],
+    [
+      5,
+      25,
+      3
+    ],
+    [
+      5,
+      26,
+      3
+    ],
+    [
+      5,
+      27,
+      3
+    ],
+    [
+      5,
+      28,
+      3
+    ],
+    [
+      5,
+      29,
+      3
+    ],
+    [
+      6,
+      2,
+      3
+    ],
+    [
+      6,
+      3,
+      3
+    ],
+    [
+      6,
+      4,
+      3
+    ],
+    [
+      6,
+      5,
+      3
+    ],
+    [
+      6,
+      6,
+      3
+    ],
+    [
+      6,
+      7,
+      3
+    ],
+    [
+      6,
+      8,
+      3
+    ],
+    [
+      6,
+      9,
+      3
+    ],
+    [
+      6,
+      10,
+      3
+    ],
+    [
+      6,
+      11,
+      3
+    ],
+    [
+      6,
+      12,
+      3
+    ],
+    [
+      6,
+      13,
+      3
+    ],
+    [
+      6,
+      14,
+      3
+    ],
+    [
+      6,
+      15,
+      3
+    ],
+    [
+      6,
+      16,
+      3
+    ],
+    [
+      6,
+      17,
+      3
+    ],
+    [
+      6,
+      18,
+      3
+    ],
+    [
+      6,
+      19,
+      3
+    ],
+    [
+      6,
+      20,
+      3
+    ],
+    [
+      6,
+      21,
+      3
+    ],
+    [
+      6,
+      22,
+      3
+    ],
+    [
+      6,
+      23,
+      3
+    ],
+    [
+      6,
+      24,
+      3
+    ],
+    [
+      6,
+      25,
+      3
+    ],
+    [
+      6,
+      26,
+      3
+    ],
+    [
+      6,
+      27,
+      3
+    ],
+    [
+      6,
+      28,
+      3
+    ],
+    [
+      6,
+      29,
+      3
+    ],
+    [
+      7,
+      2,
+      3
+    ],
+    [
+      7,
+      3,
+      3
+    ],
+    [
+      7,
+      4,
+      3
+    ],
+    [
+      7,
+      5,
+      3
+    ],
+    [
+      7,
+      6,
+      3
+    ],
+    [
+      7,
+      7,
+      3
+    ],
+    [
+      7,
+      8,
+      3
+    ],
+    [
+      7,
+      9,
+      3
+    ],
+    [
+      7,
+      10,
+      3
+    ],
+    [
+      7,
+      11,
+      3
+    ],
+    [
+      7,
+      12,
+      3
+    ],
+    [
+      7,
+      13,
+      3
+    ],
+    [
+      7,
+      14,
+      3
+    ],
+    [
+      7,
+      15,
+      3
+    ],
+    [
+      7,
+      16,
+      3
+    ],
+    [
+      7,
+      17,
+      3
+    ],
+    [
+      7,
+      18,
+      3
+    ],
+    [
+      7,
+      19,
+      3
+    ],
+    [
+      7,
+      20,
+      3
+    ],
+    [
+      7,
+      21,
+      3
+    ],
+    [
+      7,
+      22,
+      3
+    ],
+    [
+      7,
+      23,
+      3
+    ],
+    [
+      7,
+      24,
+      3
+    ],
+    [
+      7,
+      25,
+      3
+    ],
+    [
+      7,
+      26,
+      3
+    ],
+    [
+      7,
+      27,
+      3
+    ],
+    [
+      7,
+      28,
+      3
+    ],
+    [
+      7,
+      29,
+      3
+    ],
+    [
+      8,
+      2,
+      3
+    ],
+    [
+      8,
+      3,
+      3
+    ],
+    [
+      8,
+      4,
+      3
+    ],
+    [
+      8,
+      5,
+      3
+    ],
+    [
+      8,
+      6,
+      3
+    ],
+    [
+      8,
+      7,
+      3
+    ],
+    [
+      8,
+      8,
+      3
+    ],
+    [
+      8,
+      9,
+      3
+    ],
+    [
+      8,
+      10,
+      3
+    ],
+    [
+      8,
+      11,
+      3
+    ],
+    [
+      8,
+      12,
+      3
+    ],
+    [
+      8,
+      13,
+      3
+    ],
+    [
+      8,
+      14,
+      3
+    ],
+    [
+      8,
+      15,
+      3
+    ],
+    [
+      8,
+      16,
+      3
+    ],
+    [
+      8,
+      17,
+      3
+    ],
+    [
+      8,
+      18,
+      3
+    ],
+    [
+      8,
+      19,
+      3
+    ],
+    [
+      8,
+      20,
+      3
+    ],
+    [
+      8,
+      21,
+      3
+    ],
+    [
+      8,
+      22,
+      3
+    ],
+    [
+      8,
+      23,
+      3
+    ],
+    [
+      8,
+      24,
+      3
+    ],
+    [
+      8,
+      25,
+      3
+    ],
+    [
+      8,
+      26,
+      3
+    ],
+    [
+      8,
+      27,
+      3
+    ],
+    [
+      8,
+      28,
+      3
+    ],
+    [
+      8,
+      29,
+      3
+    ],
+    [
+      9,
+      2,
+      3
+    ],
+    [
+      9,
+      3,
+      3
+    ],
+    [
+      9,
+      4,
+      3
+    ],
+    [
+      9,
+      5,
+      3
+    ],
+    [
+      9,
+      6,
+      3
+    ],
+    [
+      9,
+      7,
+      3
+    ],
+    [
+      9,
+      8,
+      3
+    ],
+    [
+      9,
+      9,
+      3
+    ],
+    [
+      9,
+      10,
+      3
+    ],
+    [
+      9,
+      11,
+      3
+    ],
+    [
+      9,
+      12,
+      3
+    ],
+    [
+      9,
+      13,
+      3
+    ],
+    [
+      9,
+      14,
+      3
+    ],
+    [
+      9,
+      15,
+      3
+    ],
+    [
+      9,
+      16,
+      3
+    ],
+    [
+      9,
+      17,
+      3
+    ],
+    [
+      9,
+      18,
+      3
+    ],
+    [
+      9,
+      19,
+      3
+    ],
+    [
+      9,
+      20,
+      3
+    ],
+    [
+      9,
+      21,
+      3
+    ],
+    [
+      9,
+      22,
+      3
+    ],
+    [
+      9,
+      23,
+      3
+    ],
+    [
+      9,
+      24,
+      3
+    ],
+    [
+      9,
+      25,
+      3
+    ],
+    [
+      9,
+      26,
+      3
+    ],
+    [
+      9,
+      27,
+      3
+    ],
+    [
+      9,
+      28,
+      3
+    ],
+    [
+      9,
+      29,
+      3
+    ],
+    [
+      4,
+      24,
+      4
+    ],
+    [
+      4,
+      25,
+      4
+    ],
+    [
+      4,
+      26,
+      4
+    ],
+    [
+      4,
+      27,
+      4
+    ],
+    [
+      4,
+      28,
+      4
+    ],
+    [
+      4,
+      29,
+      4
+    ],
+    [
+      5,
+      24,
+      4
+    ],
+    [
+      5,
+      25,
+      4
+    ],
+    [
+      5,
+      26,
+      4
+    ],
+    [
+      5,
+      27,
+      4
+    ],
+    [
+      5,
+      28,
+      4
+    ],
+    [
+      5,
+      29,
+      4
+    ],
+    [
+      6,
+      24,
+      4
+    ],
+    [
+      6,
+      25,
+      4
+    ],
+    [
+      6,
+      26,
+      4
+    ],
+    [
+      6,
+      27,
+      4
+    ],
+    [
+      6,
+      28,
+      4
+    ],
+    [
+      6,
+      29,
+      4
+    ],
+    [
+      7,
+      24,
+      4
+    ],
+    [
+      7,
+      25,
+      4
+    ],
+    [
+      7,
+      26,
+      4
+    ],
+    [
+      7,
+      27,
+      4
+    ],
+    [
+      7,
+      28,
+      4
+    ],
+    [
+      7,
+      29,
+      4
+    ],
+    [
+      15,
+      0,
+      2
+    ],
+    [
+      15,
+      1,
+      2
+    ],
+    [
+      15,
+      2,
+      2
+    ],
+    [
+      15,
+      3,
+      2
+    ],
+    [
+      15,
+      4,
+      2
+    ],
+    [
+      15,
+      5,
+      2
+    ],
+    [
+      15,
+      6,
+      2
+    ],
+    [
+      15,
+      7,
+      2
+    ],
+    [
+      15,
+      8,
+      2
+    ],
+    [
+      15,
+      9,
+      2
+    ],
+    [
+      15,
+      10,
+      2
+    ],
+    [
+      15,
+      11,
+      2
+    ],
+    [
+      15,
+      12,
+      2
+    ],
+    [
+      15,
+      13,
+      2
+    ],
+    [
+      15,
+      14,
+      2
+    ],
+    [
+      15,
+      15,
+      2
+    ],
+    [
+      15,
+      16,
+      2
+    ],
+    [
+      15,
+      17,
+      2
+    ],
+    [
+      15,
+      18,
+      2
+    ],
+    [
+      15,
+      19,
+      2
+    ],
+    [
+      15,
+      20,
+      2
+    ],
+    [
+      15,
+      21,
+      2
+    ],
+    [
+      15,
+      22,
+      2
+    ],
+    [
+      15,
+      23,
+      2
+    ],
+    [
+      15,
+      24,
+      2
+    ],
+    [
+      15,
+      25,
+      2
+    ],
+    [
+      15,
+      26,
+      2
+    ],
+    [
+      15,
+      27,
+      2
+    ],
+    [
+      15,
+      28,
+      2
+    ],
+    [
+      15,
+      29,
+      2
+    ],
+    [
+      16,
+      0,
+      2
+    ],
+    [
+      16,
+      1,
+      2
+    ],
+    [
+      16,
+      2,
+      2
+    ],
+    [
+      16,
+      3,
+      2
+    ],
+    [
+      16,
+      4,
+      2
+    ],
+    [
+      16,
+      5,
+      2
+    ],
+    [
+      16,
+      6,
+      2
+    ],
+    [
+      16,
+      7,
+      2
+    ],
+    [
+      16,
+      8,
+      2
+    ],
+    [
+      16,
+      9,
+      2
+    ],
+    [
+      16,
+      10,
+      2
+    ],
+    [
+      16,
+      11,
+      2
+    ],
+    [
+      16,
+      12,
+      2
+    ],
+    [
+      16,
+      13,
+      2
+    ],
+    [
+      16,
+      14,
+      2
+    ],
+    [
+      16,
+      15,
+      2
+    ],
+    [
+      16,
+      16,
+      2
+    ],
+    [
+      16,
+      17,
+      2
+    ],
+    [
+      16,
+      18,
+      2
+    ],
+    [
+      16,
+      19,
+      2
+    ],
+    [
+      16,
+      20,
+      2
+    ],
+    [
+      16,
+      21,
+      2
+    ],
+    [
+      16,
+      22,
+      2
+    ],
+    [
+      16,
+      23,
+      2
+    ],
+    [
+      16,
+      24,
+      2
+    ],
+    [
+      16,
+      25,
+      2
+    ],
+    [
+      16,
+      26,
+      2
+    ],
+    [
+      16,
+      27,
+      2
+    ],
+    [
+      16,
+      28,
+      2
+    ],
+    [
+      16,
+      29,
+      2
+    ]
+  ],
+  "terrain_features": [
+    [
+      0,
+      0,
+      "forest"
+    ],
+    [
+      0,
+      2,
+      "forest"
+    ],
+    [
+      0,
+      4,
+      "forest"
+    ],
+    [
+      0,
+      6,
+      "forest"
+    ],
+    [
+      0,
+      8,
+      "forest"
+    ],
+    [
+      0,
+      10,
+      "forest"
+    ],
+    [
+      0,
+      12,
+      "forest"
+    ],
+    [
+      0,
+      14,
+      "forest"
+    ],
+    [
+      0,
+      16,
+      "forest"
+    ],
+    [
+      0,
+      18,
+      "forest"
+    ],
+    [
+      0,
+      20,
+      "forest"
+    ],
+    [
+      0,
+      22,
+      "forest"
+    ],
+    [
+      0,
+      24,
+      "forest"
+    ],
+    [
+      0,
+      26,
+      "forest"
+    ],
+    [
+      0,
+      28,
+      "forest"
+    ],
+    [
+      1,
+      1,
+      "forest"
+    ],
+    [
+      1,
+      3,
+      "forest"
+    ],
+    [
+      1,
+      5,
+      "forest"
+    ],
+    [
+      1,
+      7,
+      "forest"
+    ],
+    [
+      1,
+      9,
+      "forest"
+    ],
+    [
+      1,
+      11,
+      "forest"
+    ],
+    [
+      1,
+      13,
+      "forest"
+    ],
+    [
+      1,
+      15,
+      "forest"
+    ],
+    [
+      1,
+      17,
+      "forest"
+    ],
+    [
+      1,
+      19,
+      "forest"
+    ],
+    [
+      1,
+      21,
+      "forest"
+    ],
+    [
+      1,
+      23,
+      "forest"
+    ],
+    [
+      1,
+      25,
+      "forest"
+    ],
+    [
+      1,
+      27,
+      "forest"
+    ],
+    [
+      1,
+      29,
+      "forest"
+    ],
+    [
+      2,
+      0,
+      "forest"
+    ],
+    [
+      2,
+      2,
+      "forest"
+    ],
+    [
+      2,
+      4,
+      "forest"
+    ],
+    [
+      2,
+      6,
+      "forest"
+    ],
+    [
+      2,
+      8,
+      "forest"
+    ],
+    [
+      2,
+      10,
+      "forest"
+    ],
+    [
+      2,
+      12,
+      "forest"
+    ],
+    [
+      2,
+      14,
+      "forest"
+    ],
+    [
+      2,
+      16,
+      "forest"
+    ],
+    [
+      2,
+      18,
+      "forest"
+    ],
+    [
+      2,
+      20,
+      "forest"
+    ],
+    [
+      2,
+      22,
+      "forest"
+    ],
+    [
+      2,
+      24,
+      "forest"
+    ],
+    [
+      2,
+      26,
+      "forest"
+    ],
+    [
+      2,
+      28,
+      "forest"
+    ],
+    [
+      3,
+      1,
+      "forest"
+    ],
+    [
+      3,
+      3,
+      "forest"
+    ],
+    [
+      3,
+      5,
+      "forest"
+    ],
+    [
+      3,
+      7,
+      "forest"
+    ],
+    [
+      3,
+      9,
+      "forest"
+    ],
+    [
+      3,
+      11,
+      "forest"
+    ],
+    [
+      3,
+      13,
+      "forest"
+    ],
+    [
+      3,
+      15,
+      "forest"
+    ],
+    [
+      3,
+      17,
+      "forest"
+    ],
+    [
+      3,
+      19,
+      "forest"
+    ],
+    [
+      3,
+      21,
+      "forest"
+    ],
+    [
+      3,
+      23,
+      "forest"
+    ],
+    [
+      3,
+      25,
+      "forest"
+    ],
+    [
+      3,
+      27,
+      "forest"
+    ],
+    [
+      3,
+      29,
+      "forest"
+    ],
+    [
+      5,
+      4,
+      "iron_vein"
+    ],
+    [
+      5,
+      5,
+      "iron_vein"
+    ],
+    [
+      6,
+      4,
+      "iron_vein"
+    ],
+    [
+      8,
+      10,
+      "iron_vein"
+    ],
+    [
+      8,
+      11,
+      "iron_vein"
+    ],
+    [
+      7,
+      18,
+      "iron_vein"
+    ],
+    [
+      7,
+      19,
+      "iron_vein"
+    ],
+    [
+      6,
+      22,
+      "stone_deposit"
+    ],
+    [
+      6,
+      23,
+      "stone_deposit"
+    ],
+    [
+      7,
+      22,
+      "stone_deposit"
+    ],
+    [
+      10,
+      0,
+      "fertile_soil"
+    ],
+    [
+      10,
+      2,
+      "fertile_soil"
+    ],
+    [
+      10,
+      4,
+      "fertile_soil"
+    ],
+    [
+      10,
+      6,
+      "fertile_soil"
+    ],
+    [
+      10,
+      8,
+      "fertile_soil"
+    ],
+    [
+      10,
+      10,
+      "fertile_soil"
+    ],
+    [
+      10,
+      12,
+      "fertile_soil"
+    ],
+    [
+      10,
+      14,
+      "fertile_soil"
+    ],
+    [
+      10,
+      16,
+      "fertile_soil"
+    ],
+    [
+      10,
+      18,
+      "fertile_soil"
+    ],
+    [
+      10,
+      20,
+      "fertile_soil"
+    ],
+    [
+      10,
+      22,
+      "fertile_soil"
+    ],
+    [
+      10,
+      24,
+      "fertile_soil"
+    ],
+    [
+      10,
+      26,
+      "fertile_soil"
+    ],
+    [
+      10,
+      28,
+      "fertile_soil"
+    ],
+    [
+      11,
+      0,
+      "fertile_soil"
+    ],
+    [
+      11,
+      2,
+      "fertile_soil"
+    ],
+    [
+      11,
+      4,
+      "fertile_soil"
+    ],
+    [
+      11,
+      6,
+      "fertile_soil"
+    ],
+    [
+      11,
+      8,
+      "fertile_soil"
+    ],
+    [
+      11,
+      10,
+      "fertile_soil"
+    ],
+    [
+      11,
+      12,
+      "fertile_soil"
+    ],
+    [
+      11,
+      14,
+      "fertile_soil"
+    ],
+    [
+      11,
+      16,
+      "fertile_soil"
+    ],
+    [
+      11,
+      18,
+      "fertile_soil"
+    ],
+    [
+      11,
+      20,
+      "fertile_soil"
+    ],
+    [
+      11,
+      22,
+      "fertile_soil"
+    ],
+    [
+      11,
+      24,
+      "fertile_soil"
+    ],
+    [
+      11,
+      26,
+      "fertile_soil"
+    ],
+    [
+      11,
+      28,
+      "fertile_soil"
+    ],
+    [
+      12,
+      0,
+      "fertile_soil"
+    ],
+    [
+      12,
+      2,
+      "fertile_soil"
+    ],
+    [
+      12,
+      4,
+      "fertile_soil"
+    ],
+    [
+      12,
+      6,
+      "fertile_soil"
+    ],
+    [
+      12,
+      8,
+      "fertile_soil"
+    ],
+    [
+      12,
+      10,
+      "fertile_soil"
+    ],
+    [
+      12,
+      12,
+      "fertile_soil"
+    ],
+    [
+      12,
+      14,
+      "fertile_soil"
+    ],
+    [
+      12,
+      16,
+      "fertile_soil"
+    ],
+    [
+      12,
+      18,
+      "fertile_soil"
+    ],
+    [
+      12,
+      20,
+      "fertile_soil"
+    ],
+    [
+      12,
+      22,
+      "fertile_soil"
+    ],
+    [
+      12,
+      24,
+      "fertile_soil"
+    ],
+    [
+      12,
+      26,
+      "fertile_soil"
+    ],
+    [
+      12,
+      28,
+      "fertile_soil"
+    ],
+    [
+      13,
+      0,
+      "fertile_soil"
+    ],
+    [
+      13,
+      2,
+      "fertile_soil"
+    ],
+    [
+      13,
+      4,
+      "fertile_soil"
+    ],
+    [
+      13,
+      6,
+      "fertile_soil"
+    ],
+    [
+      13,
+      8,
+      "fertile_soil"
+    ],
+    [
+      13,
+      10,
+      "fertile_soil"
+    ],
+    [
+      13,
+      12,
+      "fertile_soil"
+    ],
+    [
+      13,
+      14,
+      "fertile_soil"
+    ],
+    [
+      13,
+      16,
+      "fertile_soil"
+    ],
+    [
+      13,
+      18,
+      "fertile_soil"
+    ],
+    [
+      13,
+      20,
+      "fertile_soil"
+    ],
+    [
+      13,
+      22,
+      "fertile_soil"
+    ],
+    [
+      13,
+      24,
+      "fertile_soil"
+    ],
+    [
+      13,
+      26,
+      "fertile_soil"
+    ],
+    [
+      13,
+      28,
+      "fertile_soil"
+    ],
+    [
+      14,
+      0,
+      "fertile_soil"
+    ],
+    [
+      14,
+      2,
+      "fertile_soil"
+    ],
+    [
+      14,
+      4,
+      "fertile_soil"
+    ],
+    [
+      14,
+      6,
+      "fertile_soil"
+    ],
+    [
+      14,
+      8,
+      "fertile_soil"
+    ],
+    [
+      14,
+      10,
+      "fertile_soil"
+    ],
+    [
+      14,
+      12,
+      "fertile_soil"
+    ],
+    [
+      14,
+      14,
+      "fertile_soil"
+    ],
+    [
+      14,
+      16,
+      "fertile_soil"
+    ],
+    [
+      14,
+      18,
+      "fertile_soil"
+    ],
+    [
+      14,
+      20,
+      "fertile_soil"
+    ],
+    [
+      14,
+      22,
+      "fertile_soil"
+    ],
+    [
+      14,
+      24,
+      "fertile_soil"
+    ],
+    [
+      14,
+      26,
+      "fertile_soil"
+    ],
+    [
+      14,
+      28,
+      "fertile_soil"
+    ],
+    [
+      15,
+      5,
+      "fish"
+    ],
+    [
+      15,
+      14,
+      "fish"
+    ],
+    [
+      15,
+      25,
+      "fish"
+    ],
+    [
+      17,
+      8,
+      "clay_deposit"
+    ],
+    [
+      17,
+      9,
+      "clay_deposit"
+    ]
+  ],
+  "terrain_feature_state": [],
+  "buildings": [
+    {
+      "type": "forum",
+      "row": 24,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 23,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 23,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 25,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 25,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 26,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 26,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 26,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "well",
+      "row": 23,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "fountain",
+      "row": 24,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "granary",
+      "row": 24,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "warehouse",
+      "row": 25,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 12,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 12,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "engineer_post",
+      "row": 26,
+      "col": 10,
+      "state": {}
+    },
+    {
+      "type": "clinic",
+      "row": 26,
+      "col": 18,
+      "state": {}
+    }
+  ],
+  "roads": [
+    [
+      24,
+      8
+    ],
+    [
+      24,
+      9
+    ],
+    [
+      24,
+      10
+    ],
+    [
+      24,
+      11
+    ],
+    [
+      24,
+      12
+    ],
+    [
+      24,
+      13
+    ],
+    [
+      24,
+      14
+    ],
+    [
+      24,
+      15
+    ],
+    [
+      24,
+      16
+    ],
+    [
+      24,
+      17
+    ],
+    [
+      24,
+      18
+    ],
+    [
+      24,
+      19
+    ],
+    [
+      24,
+      20
+    ],
+    [
+      24,
+      21
+    ],
+    [
+      17,
+      14
+    ],
+    [
+      18,
+      14
+    ],
+    [
+      19,
+      14
+    ],
+    [
+      20,
+      14
+    ],
+    [
+      21,
+      14
+    ],
+    [
+      22,
+      14
+    ],
+    [
+      23,
+      14
+    ],
+    [
+      15,
+      14
+    ],
+    [
+      16,
+      14
+    ],
+    [
+      15,
+      22
+    ],
+    [
+      16,
+      22
+    ],
+    [
+      17,
+      22
+    ],
+    [
+      18,
+      22
+    ],
+    [
+      19,
+      22
+    ],
+    [
+      20,
+      22
+    ],
+    [
+      21,
+      22
+    ],
+    [
+      22,
+      22
+    ],
+    [
+      23,
+      22
+    ],
+    [
+      10,
+      14
+    ],
+    [
+      11,
+      14
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      14,
+      14
+    ],
+    [
+      10,
+      22
+    ],
+    [
+      11,
+      22
+    ],
+    [
+      12,
+      22
+    ],
+    [
+      13,
+      22
+    ],
+    [
+      14,
+      22
+    ],
+    [
+      12,
+      8
+    ],
+    [
+      12,
+      9
+    ],
+    [
+      12,
+      10
+    ],
+    [
+      12,
+      11
+    ],
+    [
+      12,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      12,
+      15
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      12,
+      17
+    ],
+    [
+      12,
+      18
+    ],
+    [
+      12,
+      19
+    ],
+    [
+      12,
+      20
+    ]
+  ],
+  "scheduled_events": [
+    {
+      "event": "Bumper Harvest",
+      "trigger": {
+        "kind": "at_month",
+        "value": 6
+      }
+    },
+    {
+      "event": "Barbarian Raid",
+      "trigger": {
+        "kind": "random_after_tick",
+        "value": 3600
+      }
+    },
+    {
+      "event": "Iron Vein Exhausted",
+      "trigger": {
+        "kind": "random_after_tick",
+        "value": 5400
+      }
+    }
+  ],
+  "disable_random_events": false,
+  "triggers": [
+    {
+      "id": "intro_on_start",
+      "when": {
+        "kind": "at_tick",
+        "value": 0
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "intro_tribute_crisis"
+        }
+      ],
+      "once": true,
+      "notes": "Opening narration on the first tick of the scenario."
+    },
+    {
+      "id": "messenger_arrives_when_town_grows",
+      "when": {
+        "kind": "on_population_above",
+        "value": 100
+      },
+      "do": [
+        {
+          "kind": "fire_request",
+          "id": "caesar_tribute_500_scenario"
+        }
+      ],
+      "once": true,
+      "notes": "Once the town has clearly prospered (pop > 100, ~40 over the start of 60), Caesar takes notice and the tribune arrives. Pre-v0.36 used 80 \u2014 too easy to hit accidentally before the player had a chance to settle in."
+    },
+    {
+      "id": "branch_pleased",
+      "when": {
+        "kind": "on_flag",
+        "flag": "tribute_paid"
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_caesar_pleased"
+        },
+        {
+          "kind": "schedule_event",
+          "event": "Frontier Trade Boom",
+          "trigger": {
+            "kind": "at_tick",
+            "value": 7200
+          }
+        }
+      ],
+      "once": true,
+      "notes": "Payment branch: cinematic + delayed economic reward. Schedules the scenario-local 'Frontier Trade Boom' (in events.json) rather than the global 'Trade Boom' \u2014 keeps the scenario self-contained and lets future tuning pass touch only this scenario's events file."
+    },
+    {
+      "id": "branch_partial",
+      "when": {
+        "kind": "on_flag",
+        "flag": "tribute_partial"
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_caesar_uneasy"
+        },
+        {
+          "kind": "fire_event",
+          "name": "Caesar Displeased"
+        }
+      ],
+      "once": true,
+      "notes": "Partial-tribute branch (player paid gold but withheld iron). Fires the displeased event for the trade-profit debuff, plays an interstitial cutscene between 'pleased' and 'wrath'. Does NOT schedule the accelerated raid \u2014 only outright refusal does that."
+    },
+    {
+      "id": "branch_refused",
+      "when": {
+        "kind": "on_flag",
+        "flag": "tribute_refused"
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_caesar_wrath"
+        },
+        {
+          "kind": "fire_event",
+          "name": "Caesar Displeased"
+        },
+        {
+          "kind": "schedule_event",
+          "event": "Barbarian Raid",
+          "trigger": {
+            "kind": "at_tick",
+            "value": 3600
+          }
+        }
+      ],
+      "once": true,
+      "notes": "Refusal branch: cinematic + diplomatic event + accelerated raid."
+    },
+    {
+      "id": "raid_survivor_arrives",
+      "when": {
+        "kind": "on_event_fired",
+        "event": "Barbarian Raid"
+      },
+      "do": [
+        {
+          "kind": "fire_request",
+          "id": "raid_aftermath_scenario"
+        }
+      ],
+      "once": true,
+      "notes": "After a raid hits, a survivor brings a follow-up choice."
+    },
+    {
+      "id": "branch_raid_abandoned",
+      "when": {
+        "kind": "on_flag",
+        "flag": "barbarian_raid_abandoned"
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_raid_abandoned"
+        }
+      ],
+      "once": true,
+      "notes": "Player chose 'Send them away' in raid_aftermath_scenario. Soft-fail cinematic \u2014 no mechanical penalty beyond the happiness hit the decision itself carries; the cost is narrative."
+    },
+    {
+      "id": "victory_path",
+      "when": {
+        "kind": "on_flag",
+        "flag": "barbarian_raid_survived"
+      },
+      "do": [
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_victory"
+        }
+      ],
+      "once": true,
+      "notes": "Survive the raid + stabilize \u2192 victory cinematic."
+    },
+    {
+      "id": "defeat_on_collapse",
+      "when": {
+        "kind": "on_treasury_below",
+        "value": -200
+      },
+      "do": [
+        {
+          "kind": "set_flag",
+          "flag": "treasury_collapsed"
+        },
+        {
+          "kind": "play_cutscene",
+          "id": "cutscene_defeat"
+        }
+      ],
+      "once": true,
+      "notes": "Hard fail: treasury crashes through -200 \u2192 defeat cinematic."
+    },
+    {
+      "id": "winter_blizzard_chance",
+      "when": {
+        "kind": "in_season_random",
+        "season": "Winter",
+        "prob": 0.01
+      },
+      "do": [
+        {
+          "kind": "fire_event",
+          "name": "Blizzard"
+        }
+      ],
+      "once": false,
+      "notes": "v0.37 example: every winter tick, 1% chance to fire the Blizzard event. once=false so the weather can hit multiple times across the scenario."
+    },
+    {
+      "id": "plague_on_doctor_shortage",
+      "when": {
+        "kind": "on_building_ratio_below",
+        "building": "clinic",
+        "per": "population",
+        "value": 1.0
+      },
+      "do": [
+        {
+          "kind": "fire_event",
+          "name": "Plague"
+        }
+      ],
+      "once": true,
+      "notes": "v0.37 example: fires Plague when clinics-per-1000-inhabitants drops below 1.0 (i.e. < 0.1% of the population has a nearby clinic). once=true so a single under-served winter doesn't cascade into a chain of plagues; author can clone the entry with a different id for repeat outbreaks."
+    }
+  ],
+  "scenario_libraries": {
+    "cutscenes": "scenarios/tribute_crisis/cutscenes.json",
+    "rpg_requests": "scenarios/tribute_crisis/rpg_requests.json",
+    "events": "scenarios/tribute_crisis/events.json"
+  }
+}

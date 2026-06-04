@@ -1,0 +1,3235 @@
+{
+  "version": 1,
+  "name": "variety",
+  "scenario": "editor",
+  "nutrients": {
+    "bread": 30,
+    "vegetables": 0,
+    "fruits": 0,
+    "meat": 0,
+    "fish": 0,
+    "cheese": 0,
+    "oil": 0,
+    "honey": 0,
+    "spice": 0,
+    "wine": 0
+  },
+  "population": 1000,
+  "workers": {
+    "worker": 900,
+    "trader": 50,
+    "soldier": 40,
+    "citizen": 10
+  },
+  "treasury": 10000,
+  "stocks": {
+    "stone": 100,
+    "stone_blocks": 50,
+    "iron": 150,
+    "wood": 300,
+    "tools": 50,
+    "planks": 20,
+    "wheat": 50,
+    "flour": 20,
+    "weapons": 3,
+    "olives": 0,
+    "grapes": 0,
+    "clay": 0,
+    "pottery": 0,
+    "livestock": 0,
+    "horses": 0
+  },
+  "army": {
+    "infantry": 0,
+    "cavalry": 0
+  },
+  "calendar": {
+    "year": 1,
+    "month": 1
+  },
+  "terrain": [
+    [
+      0,
+      9,
+      5
+    ],
+    [
+      0,
+      10,
+      5
+    ],
+    [
+      0,
+      11,
+      5
+    ],
+    [
+      0,
+      12,
+      5
+    ],
+    [
+      0,
+      13,
+      5
+    ],
+    [
+      0,
+      14,
+      5
+    ],
+    [
+      0,
+      15,
+      5
+    ],
+    [
+      0,
+      16,
+      5
+    ],
+    [
+      0,
+      25,
+      4
+    ],
+    [
+      0,
+      26,
+      4
+    ],
+    [
+      0,
+      27,
+      4
+    ],
+    [
+      0,
+      28,
+      3
+    ],
+    [
+      0,
+      29,
+      4
+    ],
+    [
+      0,
+      35,
+      2
+    ],
+    [
+      0,
+      36,
+      2
+    ],
+    [
+      1,
+      12,
+      5
+    ],
+    [
+      1,
+      13,
+      5
+    ],
+    [
+      1,
+      15,
+      5
+    ],
+    [
+      1,
+      24,
+      3
+    ],
+    [
+      1,
+      25,
+      3
+    ],
+    [
+      1,
+      26,
+      4
+    ],
+    [
+      1,
+      27,
+      4
+    ],
+    [
+      1,
+      28,
+      4
+    ],
+    [
+      1,
+      30,
+      3
+    ],
+    [
+      1,
+      35,
+      2
+    ],
+    [
+      1,
+      36,
+      2
+    ],
+    [
+      2,
+      24,
+      3
+    ],
+    [
+      2,
+      25,
+      4
+    ],
+    [
+      2,
+      26,
+      3
+    ],
+    [
+      2,
+      27,
+      4
+    ],
+    [
+      2,
+      28,
+      4
+    ],
+    [
+      2,
+      29,
+      4
+    ],
+    [
+      2,
+      30,
+      3
+    ],
+    [
+      2,
+      35,
+      2
+    ],
+    [
+      2,
+      36,
+      2
+    ],
+    [
+      3,
+      25,
+      3
+    ],
+    [
+      3,
+      26,
+      3
+    ],
+    [
+      3,
+      28,
+      3
+    ],
+    [
+      3,
+      29,
+      3
+    ],
+    [
+      3,
+      35,
+      2
+    ],
+    [
+      3,
+      36,
+      2
+    ],
+    [
+      4,
+      24,
+      3
+    ],
+    [
+      4,
+      25,
+      3
+    ],
+    [
+      4,
+      27,
+      3
+    ],
+    [
+      4,
+      28,
+      3
+    ],
+    [
+      4,
+      30,
+      3
+    ],
+    [
+      4,
+      35,
+      2
+    ],
+    [
+      4,
+      36,
+      2
+    ],
+    [
+      5,
+      35,
+      2
+    ],
+    [
+      5,
+      36,
+      2
+    ],
+    [
+      6,
+      35,
+      2
+    ],
+    [
+      6,
+      36,
+      2
+    ],
+    [
+      7,
+      35,
+      2
+    ],
+    [
+      7,
+      36,
+      2
+    ],
+    [
+      8,
+      35,
+      2
+    ],
+    [
+      8,
+      36,
+      2
+    ],
+    [
+      9,
+      35,
+      2
+    ],
+    [
+      9,
+      36,
+      2
+    ],
+    [
+      10,
+      35,
+      2
+    ],
+    [
+      10,
+      36,
+      2
+    ],
+    [
+      11,
+      35,
+      2
+    ],
+    [
+      11,
+      36,
+      2
+    ],
+    [
+      12,
+      35,
+      2
+    ],
+    [
+      12,
+      36,
+      2
+    ],
+    [
+      13,
+      35,
+      2
+    ],
+    [
+      13,
+      36,
+      2
+    ],
+    [
+      14,
+      35,
+      2
+    ],
+    [
+      14,
+      36,
+      2
+    ],
+    [
+      15,
+      35,
+      2
+    ],
+    [
+      15,
+      36,
+      2
+    ],
+    [
+      16,
+      35,
+      2
+    ],
+    [
+      16,
+      36,
+      2
+    ],
+    [
+      17,
+      35,
+      2
+    ],
+    [
+      17,
+      36,
+      2
+    ],
+    [
+      18,
+      29,
+      3
+    ],
+    [
+      18,
+      30,
+      4
+    ],
+    [
+      18,
+      31,
+      4
+    ],
+    [
+      18,
+      35,
+      2
+    ],
+    [
+      18,
+      36,
+      2
+    ],
+    [
+      19,
+      29,
+      3
+    ],
+    [
+      19,
+      35,
+      2
+    ],
+    [
+      19,
+      36,
+      2
+    ],
+    [
+      20,
+      7,
+      2
+    ],
+    [
+      20,
+      29,
+      3
+    ],
+    [
+      20,
+      35,
+      2
+    ],
+    [
+      20,
+      36,
+      2
+    ],
+    [
+      21,
+      6,
+      2
+    ],
+    [
+      21,
+      7,
+      2
+    ],
+    [
+      21,
+      29,
+      4
+    ],
+    [
+      21,
+      30,
+      4
+    ],
+    [
+      21,
+      35,
+      2
+    ],
+    [
+      21,
+      36,
+      2
+    ],
+    [
+      22,
+      3,
+      2
+    ],
+    [
+      22,
+      4,
+      2
+    ],
+    [
+      22,
+      5,
+      2
+    ],
+    [
+      22,
+      6,
+      2
+    ],
+    [
+      22,
+      7,
+      2
+    ],
+    [
+      22,
+      29,
+      3
+    ],
+    [
+      22,
+      35,
+      2
+    ],
+    [
+      22,
+      36,
+      2
+    ],
+    [
+      23,
+      3,
+      2
+    ],
+    [
+      23,
+      4,
+      2
+    ],
+    [
+      23,
+      5,
+      2
+    ],
+    [
+      23,
+      6,
+      2
+    ],
+    [
+      23,
+      7,
+      2
+    ],
+    [
+      23,
+      28,
+      3
+    ],
+    [
+      23,
+      35,
+      2
+    ],
+    [
+      23,
+      36,
+      2
+    ],
+    [
+      24,
+      3,
+      2
+    ],
+    [
+      24,
+      4,
+      2
+    ],
+    [
+      24,
+      5,
+      2
+    ],
+    [
+      24,
+      6,
+      2
+    ],
+    [
+      24,
+      7,
+      2
+    ],
+    [
+      24,
+      28,
+      3
+    ],
+    [
+      24,
+      35,
+      2
+    ],
+    [
+      24,
+      36,
+      2
+    ],
+    [
+      25,
+      3,
+      2
+    ],
+    [
+      25,
+      4,
+      2
+    ],
+    [
+      25,
+      5,
+      2
+    ],
+    [
+      25,
+      6,
+      2
+    ],
+    [
+      25,
+      7,
+      2
+    ],
+    [
+      25,
+      27,
+      3
+    ],
+    [
+      25,
+      28,
+      4
+    ],
+    [
+      25,
+      31,
+      4
+    ],
+    [
+      25,
+      35,
+      2
+    ],
+    [
+      25,
+      36,
+      2
+    ],
+    [
+      26,
+      2,
+      2
+    ],
+    [
+      26,
+      3,
+      2
+    ],
+    [
+      26,
+      4,
+      2
+    ],
+    [
+      26,
+      5,
+      2
+    ],
+    [
+      26,
+      6,
+      2
+    ],
+    [
+      26,
+      7,
+      2
+    ],
+    [
+      26,
+      27,
+      3
+    ],
+    [
+      26,
+      31,
+      4
+    ],
+    [
+      26,
+      35,
+      2
+    ],
+    [
+      26,
+      36,
+      2
+    ],
+    [
+      27,
+      0,
+      2
+    ],
+    [
+      27,
+      1,
+      2
+    ],
+    [
+      27,
+      2,
+      2
+    ],
+    [
+      27,
+      3,
+      2
+    ],
+    [
+      27,
+      4,
+      2
+    ],
+    [
+      27,
+      5,
+      2
+    ],
+    [
+      27,
+      6,
+      2
+    ],
+    [
+      27,
+      7,
+      2
+    ],
+    [
+      27,
+      28,
+      3
+    ],
+    [
+      27,
+      29,
+      3
+    ],
+    [
+      27,
+      30,
+      4
+    ],
+    [
+      27,
+      31,
+      3
+    ],
+    [
+      27,
+      32,
+      3
+    ],
+    [
+      27,
+      33,
+      4
+    ],
+    [
+      27,
+      34,
+      3
+    ],
+    [
+      27,
+      35,
+      2
+    ],
+    [
+      27,
+      36,
+      2
+    ],
+    [
+      28,
+      0,
+      2
+    ],
+    [
+      28,
+      1,
+      2
+    ],
+    [
+      28,
+      2,
+      2
+    ],
+    [
+      28,
+      3,
+      2
+    ],
+    [
+      28,
+      4,
+      2
+    ],
+    [
+      28,
+      5,
+      2
+    ],
+    [
+      28,
+      6,
+      2
+    ],
+    [
+      28,
+      29,
+      4
+    ],
+    [
+      28,
+      30,
+      3
+    ],
+    [
+      28,
+      32,
+      4
+    ],
+    [
+      28,
+      33,
+      3
+    ],
+    [
+      28,
+      35,
+      2
+    ],
+    [
+      28,
+      36,
+      2
+    ],
+    [
+      29,
+      0,
+      2
+    ],
+    [
+      29,
+      1,
+      2
+    ],
+    [
+      29,
+      2,
+      2
+    ],
+    [
+      29,
+      3,
+      2
+    ],
+    [
+      29,
+      28,
+      4
+    ],
+    [
+      29,
+      30,
+      3
+    ],
+    [
+      29,
+      31,
+      4
+    ],
+    [
+      29,
+      33,
+      3
+    ],
+    [
+      29,
+      34,
+      4
+    ],
+    [
+      29,
+      35,
+      2
+    ],
+    [
+      29,
+      36,
+      2
+    ]
+  ],
+  "terrain_features": [
+    [
+      2,
+      2,
+      "stone_deposit"
+    ],
+    [
+      2,
+      3,
+      "stone_deposit"
+    ],
+    [
+      3,
+      2,
+      "stone_deposit"
+    ],
+    [
+      3,
+      3,
+      "stone_deposit"
+    ],
+    [
+      3,
+      30,
+      "gold_vein"
+    ],
+    [
+      3,
+      31,
+      "gold_vein"
+    ],
+    [
+      4,
+      17,
+      "groundwater"
+    ],
+    [
+      4,
+      18,
+      "groundwater"
+    ],
+    [
+      4,
+      19,
+      "groundwater"
+    ],
+    [
+      5,
+      9,
+      "stone_deposit"
+    ],
+    [
+      5,
+      10,
+      "stone_deposit"
+    ],
+    [
+      5,
+      11,
+      "stone_deposit"
+    ],
+    [
+      5,
+      12,
+      "stone_deposit"
+    ],
+    [
+      5,
+      17,
+      "groundwater"
+    ],
+    [
+      5,
+      18,
+      "groundwater"
+    ],
+    [
+      5,
+      19,
+      "groundwater"
+    ],
+    [
+      6,
+      9,
+      "stone_deposit"
+    ],
+    [
+      6,
+      10,
+      "stone_deposit"
+    ],
+    [
+      6,
+      11,
+      "stone_deposit"
+    ],
+    [
+      6,
+      12,
+      "stone_deposit"
+    ],
+    [
+      7,
+      9,
+      "stone_deposit"
+    ],
+    [
+      7,
+      10,
+      "stone_deposit"
+    ],
+    [
+      7,
+      11,
+      "stone_deposit"
+    ],
+    [
+      7,
+      12,
+      "stone_deposit"
+    ],
+    [
+      9,
+      4,
+      "forest"
+    ],
+    [
+      9,
+      5,
+      "forest"
+    ],
+    [
+      10,
+      3,
+      "forest"
+    ],
+    [
+      10,
+      4,
+      "forest"
+    ],
+    [
+      11,
+      3,
+      "forest"
+    ],
+    [
+      11,
+      5,
+      "forest"
+    ],
+    [
+      12,
+      4,
+      "forest"
+    ],
+    [
+      13,
+      3,
+      "forest"
+    ],
+    [
+      13,
+      4,
+      "forest"
+    ],
+    [
+      13,
+      6,
+      "forest"
+    ],
+    [
+      14,
+      3,
+      "forest"
+    ],
+    [
+      14,
+      4,
+      "forest"
+    ],
+    [
+      14,
+      5,
+      "forest"
+    ],
+    [
+      14,
+      9,
+      "fertile_soil"
+    ],
+    [
+      14,
+      14,
+      "fertile_soil"
+    ],
+    [
+      15,
+      3,
+      "forest"
+    ],
+    [
+      15,
+      4,
+      "forest"
+    ],
+    [
+      15,
+      5,
+      "forest"
+    ],
+    [
+      15,
+      6,
+      "forest"
+    ],
+    [
+      15,
+      7,
+      "forest"
+    ],
+    [
+      15,
+      10,
+      "fertile_soil"
+    ],
+    [
+      15,
+      15,
+      "fertile_soil"
+    ],
+    [
+      16,
+      2,
+      "forest"
+    ],
+    [
+      16,
+      3,
+      "forest"
+    ],
+    [
+      16,
+      4,
+      "forest"
+    ],
+    [
+      16,
+      5,
+      "forest"
+    ],
+    [
+      16,
+      6,
+      "forest"
+    ],
+    [
+      16,
+      7,
+      "forest"
+    ],
+    [
+      16,
+      11,
+      "fertile_soil"
+    ],
+    [
+      16,
+      16,
+      "fertile_soil"
+    ],
+    [
+      17,
+      2,
+      "forest"
+    ],
+    [
+      17,
+      3,
+      "forest"
+    ],
+    [
+      17,
+      4,
+      "forest"
+    ],
+    [
+      17,
+      5,
+      "forest"
+    ],
+    [
+      17,
+      6,
+      "forest"
+    ],
+    [
+      17,
+      7,
+      "forest"
+    ],
+    [
+      17,
+      12,
+      "fertile_soil"
+    ],
+    [
+      17,
+      17,
+      "fertile_soil"
+    ],
+    [
+      18,
+      3,
+      "forest"
+    ],
+    [
+      18,
+      4,
+      "forest"
+    ],
+    [
+      18,
+      5,
+      "forest"
+    ],
+    [
+      18,
+      6,
+      "forest"
+    ],
+    [
+      19,
+      3,
+      "forest"
+    ],
+    [
+      19,
+      4,
+      "forest"
+    ],
+    [
+      19,
+      5,
+      "forest"
+    ],
+    [
+      19,
+      30,
+      "copper_vein"
+    ],
+    [
+      19,
+      31,
+      "copper_vein"
+    ],
+    [
+      20,
+      30,
+      "copper_vein"
+    ],
+    [
+      20,
+      31,
+      "copper_vein"
+    ],
+    [
+      22,
+      30,
+      "gold_vein"
+    ],
+    [
+      22,
+      31,
+      "gold_vein"
+    ],
+    [
+      23,
+      10,
+      "fertile_soil"
+    ],
+    [
+      23,
+      30,
+      "gold_vein"
+    ],
+    [
+      23,
+      31,
+      "gold_vein"
+    ],
+    [
+      24,
+      11,
+      "fertile_soil"
+    ],
+    [
+      24,
+      12,
+      "fertile_soil"
+    ],
+    [
+      24,
+      13,
+      "fertile_soil"
+    ],
+    [
+      24,
+      14,
+      "fertile_soil"
+    ],
+    [
+      24,
+      18,
+      "fertile_soil"
+    ],
+    [
+      24,
+      19,
+      "fertile_soil"
+    ],
+    [
+      24,
+      20,
+      "fertile_soil"
+    ],
+    [
+      25,
+      11,
+      "fertile_soil"
+    ],
+    [
+      25,
+      12,
+      "fertile_soil"
+    ],
+    [
+      25,
+      13,
+      "fertile_soil"
+    ],
+    [
+      25,
+      15,
+      "fertile_soil"
+    ],
+    [
+      25,
+      16,
+      "fertile_soil"
+    ],
+    [
+      25,
+      17,
+      "fertile_soil"
+    ],
+    [
+      25,
+      18,
+      "fertile_soil"
+    ],
+    [
+      25,
+      19,
+      "fertile_soil"
+    ],
+    [
+      25,
+      20,
+      "fertile_soil"
+    ],
+    [
+      25,
+      21,
+      "fertile_soil"
+    ],
+    [
+      25,
+      22,
+      "fertile_soil"
+    ],
+    [
+      25,
+      29,
+      "iron_vein"
+    ],
+    [
+      25,
+      30,
+      "iron_vein"
+    ],
+    [
+      26,
+      15,
+      "fertile_soil"
+    ],
+    [
+      26,
+      16,
+      "fertile_soil"
+    ],
+    [
+      26,
+      17,
+      "fertile_soil"
+    ],
+    [
+      26,
+      20,
+      "fertile_soil"
+    ],
+    [
+      26,
+      22,
+      "fertile_soil"
+    ],
+    [
+      26,
+      29,
+      "iron_vein"
+    ],
+    [
+      26,
+      30,
+      "iron_vein"
+    ],
+    [
+      26,
+      32,
+      "copper_vein"
+    ],
+    [
+      26,
+      33,
+      "copper_vein"
+    ],
+    [
+      27,
+      13,
+      "fertile_soil"
+    ],
+    [
+      27,
+      15,
+      "fertile_soil"
+    ],
+    [
+      27,
+      16,
+      "fertile_soil"
+    ],
+    [
+      27,
+      18,
+      "fertile_soil"
+    ],
+    [
+      27,
+      19,
+      "fertile_soil"
+    ],
+    [
+      27,
+      20,
+      "fertile_soil"
+    ],
+    [
+      28,
+      13,
+      "fertile_soil"
+    ],
+    [
+      28,
+      15,
+      "fertile_soil"
+    ],
+    [
+      28,
+      16,
+      "fertile_soil"
+    ],
+    [
+      28,
+      18,
+      "fertile_soil"
+    ]
+  ],
+  "terrain_feature_state": [
+    [
+      2,
+      2,
+      null
+    ],
+    [
+      2,
+      3,
+      null
+    ],
+    [
+      3,
+      2,
+      null
+    ],
+    [
+      3,
+      3,
+      null
+    ],
+    [
+      3,
+      30,
+      400.0
+    ],
+    [
+      3,
+      31,
+      400.0
+    ],
+    [
+      8,
+      12,
+      null
+    ],
+    [
+      9,
+      4,
+      800.0
+    ],
+    [
+      9,
+      5,
+      800.0
+    ],
+    [
+      10,
+      3,
+      800.0
+    ],
+    [
+      10,
+      4,
+      800.0
+    ],
+    [
+      11,
+      3,
+      800.0
+    ],
+    [
+      11,
+      5,
+      800.0
+    ],
+    [
+      12,
+      22,
+      null
+    ],
+    [
+      14,
+      9,
+      null
+    ],
+    [
+      14,
+      11,
+      800.0
+    ],
+    [
+      14,
+      14,
+      null
+    ],
+    [
+      15,
+      4,
+      800.0
+    ],
+    [
+      15,
+      5,
+      800.0
+    ],
+    [
+      15,
+      7,
+      null
+    ],
+    [
+      15,
+      10,
+      null
+    ],
+    [
+      15,
+      15,
+      null
+    ],
+    [
+      16,
+      4,
+      800.0
+    ],
+    [
+      16,
+      5,
+      800.0
+    ],
+    [
+      16,
+      11,
+      null
+    ],
+    [
+      16,
+      16,
+      null
+    ],
+    [
+      17,
+      7,
+      null
+    ],
+    [
+      17,
+      12,
+      null
+    ],
+    [
+      17,
+      17,
+      null
+    ],
+    [
+      20,
+      16,
+      null
+    ],
+    [
+      26,
+      32,
+      400.0
+    ],
+    [
+      26,
+      33,
+      400.0
+    ]
+  ],
+  "buildings": [
+    {
+      "type": "well",
+      "row": 8,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "fountain",
+      "row": 8,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "fountain",
+      "row": 8,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "well",
+      "row": 8,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 9,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 10,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 14,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 15,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 16,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 17,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 18,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 10,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 20,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 21,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 22,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 10,
+      "col": 23,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 10,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 11,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 14,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 15,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 16,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 17,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 18,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 11,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 20,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 21,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 22,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 11,
+      "col": 23,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 11,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 12,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 13,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "warehouse",
+      "row": 13,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 13,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "windmill",
+      "row": 13,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "windmill",
+      "row": 13,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 13,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "warehouse",
+      "row": 13,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 13,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 6,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 7,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "prefecture",
+      "row": 14,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "windmill",
+      "row": 14,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "windmill",
+      "row": 14,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 14,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "prefecture",
+      "row": 14,
+      "col": 25,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 15,
+      "col": 6,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 15,
+      "col": 7,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 15,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "sawmill",
+      "row": 15,
+      "col": 9,
+      "state": {}
+    },
+    {
+      "type": "engineer_post",
+      "row": 15,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 15,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 15,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "granary",
+      "row": 15,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "granary",
+      "row": 15,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 15,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 15,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "engineer_post",
+      "row": 15,
+      "col": 25,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 16,
+      "col": 6,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 16,
+      "col": 7,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 16,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "sawmill",
+      "row": 16,
+      "col": 9,
+      "state": {}
+    },
+    {
+      "type": "engineer_post",
+      "row": 16,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 16,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 16,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "well",
+      "row": 16,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 16,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 16,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "well",
+      "row": 16,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 16,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 16,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "engineer_post",
+      "row": 16,
+      "col": 25,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 17,
+      "col": 6,
+      "state": {}
+    },
+    {
+      "type": "lumber_mill",
+      "row": 17,
+      "col": 7,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 9,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 10,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 11,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 17,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 18,
+      "col": 6,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 18,
+      "col": 7,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 18,
+      "col": 8,
+      "state": {}
+    },
+    {
+      "type": "market",
+      "row": 18,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 18,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 18,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 18,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 18,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 18,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 18,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "market",
+      "row": 18,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "market",
+      "row": 19,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 19,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 19,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "market",
+      "row": 19,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 20,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 21,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 21,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 15,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 16,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 17,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 18,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 19,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 20,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 21,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 21,
+      "col": 22,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 21,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 21,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 22,
+      "col": 13,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 22,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 15,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 16,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 17,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "fountain",
+      "row": 22,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 19,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 20,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 21,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "house",
+      "row": 22,
+      "col": 22,
+      "state": {
+        "tier": 0,
+        "streak": 0
+      }
+    },
+    {
+      "type": "road",
+      "row": 22,
+      "col": 23,
+      "state": {}
+    },
+    {
+      "type": "bakery",
+      "row": 22,
+      "col": 24,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 14,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 15,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 16,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 17,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 18,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 19,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 20,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 21,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 22,
+      "state": {}
+    },
+    {
+      "type": "road",
+      "row": 23,
+      "col": 23,
+      "state": {}
+    }
+  ],
+  "roads": [
+    [
+      9,
+      13
+    ],
+    [
+      9,
+      14
+    ],
+    [
+      9,
+      15
+    ],
+    [
+      9,
+      16
+    ],
+    [
+      9,
+      17
+    ],
+    [
+      9,
+      18
+    ],
+    [
+      9,
+      19
+    ],
+    [
+      9,
+      20
+    ],
+    [
+      9,
+      21
+    ],
+    [
+      9,
+      22
+    ],
+    [
+      9,
+      23
+    ],
+    [
+      9,
+      24
+    ],
+    [
+      10,
+      13
+    ],
+    [
+      10,
+      19
+    ],
+    [
+      10,
+      24
+    ],
+    [
+      11,
+      13
+    ],
+    [
+      11,
+      19
+    ],
+    [
+      11,
+      24
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      12,
+      15
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      12,
+      17
+    ],
+    [
+      12,
+      18
+    ],
+    [
+      12,
+      19
+    ],
+    [
+      12,
+      20
+    ],
+    [
+      12,
+      21
+    ],
+    [
+      12,
+      22
+    ],
+    [
+      12,
+      23
+    ],
+    [
+      12,
+      24
+    ],
+    [
+      13,
+      13
+    ],
+    [
+      13,
+      16
+    ],
+    [
+      13,
+      21
+    ],
+    [
+      13,
+      24
+    ],
+    [
+      14,
+      6
+    ],
+    [
+      14,
+      7
+    ],
+    [
+      14,
+      8
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      14,
+      16
+    ],
+    [
+      14,
+      21
+    ],
+    [
+      14,
+      24
+    ],
+    [
+      15,
+      8
+    ],
+    [
+      15,
+      13
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      15,
+      21
+    ],
+    [
+      15,
+      24
+    ],
+    [
+      16,
+      8
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      16,
+      21
+    ],
+    [
+      16,
+      24
+    ],
+    [
+      17,
+      8
+    ],
+    [
+      17,
+      9
+    ],
+    [
+      17,
+      10
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      17,
+      13
+    ],
+    [
+      17,
+      14
+    ],
+    [
+      17,
+      15
+    ],
+    [
+      17,
+      16
+    ],
+    [
+      17,
+      17
+    ],
+    [
+      17,
+      18
+    ],
+    [
+      17,
+      19
+    ],
+    [
+      17,
+      20
+    ],
+    [
+      17,
+      21
+    ],
+    [
+      17,
+      22
+    ],
+    [
+      17,
+      23
+    ],
+    [
+      17,
+      24
+    ],
+    [
+      18,
+      6
+    ],
+    [
+      18,
+      7
+    ],
+    [
+      18,
+      8
+    ],
+    [
+      18,
+      14
+    ],
+    [
+      18,
+      23
+    ],
+    [
+      19,
+      14
+    ],
+    [
+      19,
+      23
+    ],
+    [
+      20,
+      14
+    ],
+    [
+      20,
+      15
+    ],
+    [
+      20,
+      16
+    ],
+    [
+      20,
+      17
+    ],
+    [
+      20,
+      18
+    ],
+    [
+      20,
+      19
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      20,
+      22
+    ],
+    [
+      20,
+      23
+    ],
+    [
+      21,
+      14
+    ],
+    [
+      21,
+      23
+    ],
+    [
+      22,
+      14
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      23,
+      14
+    ],
+    [
+      23,
+      15
+    ],
+    [
+      23,
+      16
+    ],
+    [
+      23,
+      17
+    ],
+    [
+      23,
+      18
+    ],
+    [
+      23,
+      19
+    ],
+    [
+      23,
+      20
+    ],
+    [
+      23,
+      21
+    ],
+    [
+      23,
+      22
+    ],
+    [
+      23,
+      23
+    ]
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cs_caesar_order",
+    "slides": [
+      {
+        "scene": "throne_room",
+        "portrait": "consul",
+        "text": "Caesar's will: cross the sea and plant the eagle on the great island."
+      },
+      {
+        "scene": "harbor",
+        "portrait": "general",
+        "text": "The legion embarks at dawn. Hold the beachhead and build."
+      }
+    ]
+  },
+  {
+    "id": "cs_colony_thrives",
+    "slides": [
+      {
+        "scene": "forum",
+        "portrait": "tribune",
+        "text": "The colony grows. Rome's grain and trade take root on the island."
+      }
+    ]
+  },
+  {
+    "id": "cs_raid_warning",
+    "slides": [
+      {
+        "scene": "frontier_dawn",
+        "portrait": "messenger",
+        "text": "Smoke to the south \u2014 raiders mass against our young colony."
+      }
+    ]
+  },
+  {
+    "id": "cs_victory",
+    "slides": [
+      {
+        "scene": "victory_parade",
+        "portrait": "consul",
+        "text": "The island is Rome's. Mare Nostrum \u2014 our sea \u2014 is whole."
+      }
+    ]
+  },
+  {
+    "id": "cs_naval_landing",
+    "slides": [
+      {
+        "scene": "harbor",
+        "portrait": "general",
+        "text": "The transports ground on the western shore. The legion wades onto the island."
+      }
+    ]
+  }
+]

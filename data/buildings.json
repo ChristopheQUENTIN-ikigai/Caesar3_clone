@@ -1,0 +1,2306 @@
+{
+  "empty": {
+    "name": "Empty",
+    "color": [
+      86,
+      125,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 0,
+    "description": "Empty land",
+    "category": "infra"
+  },
+  "road": {
+    "name": "Road",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 5,
+    "description": "Connect buildings",
+    "category": "infra"
+  },
+  "road_h5": {
+    "name": "Road x5 \u2192",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 25,
+    "description": "Stamp 5 road tiles in a row (horizontal). Cost is 5x road. Partial placement if blocked.",
+    "category": "infra",
+    "placement_brush": {
+      "stamp_id": "road",
+      "axis": "h",
+      "length": 5
+    }
+  },
+  "road_h10": {
+    "name": "Road x10 \u2192",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 50,
+    "description": "Stamp 10 road tiles in a row (horizontal). Cost is 10x road. Partial placement if blocked.",
+    "category": "infra",
+    "placement_brush": {
+      "stamp_id": "road",
+      "axis": "h",
+      "length": 10
+    }
+  },
+  "road_v5": {
+    "name": "Road x5 \u2193",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 25,
+    "description": "Stamp 5 road tiles in a column (vertical). Cost is 5x road. Partial placement if blocked.",
+    "category": "infra",
+    "placement_brush": {
+      "stamp_id": "road",
+      "axis": "v",
+      "length": 5
+    }
+  },
+  "road_v10": {
+    "name": "Road x10 \u2193",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 50,
+    "description": "Stamp 10 road tiles in a column (vertical). Cost is 10x road. Partial placement if blocked.",
+    "category": "infra",
+    "placement_brush": {
+      "stamp_id": "road",
+      "axis": "v",
+      "length": 10
+    }
+  },
+  "wooden_bridge_h5": {
+    "name": "Wooden Bridge 5 \u2192",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "size": [
+      5,
+      1
+    ],
+    "cost": 60,
+    "description": "5-tile wooden bridge spanning water. Carries walkers and roads. Cheap; no material cost.",
+    "category": "infra",
+    "bridges_water": true,
+    "construction_ticks": 10
+  },
+  "wooden_bridge_h10": {
+    "name": "Wooden Bridge 10 \u2192",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "size": [
+      10,
+      1
+    ],
+    "cost": 110,
+    "description": "10-tile wooden bridge spanning water. Carries walkers and roads. Cheap; no material cost.",
+    "category": "infra",
+    "bridges_water": true,
+    "construction_ticks": 15
+  },
+  "wooden_bridge_v5": {
+    "name": "Wooden Bridge 5 \u2193",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "size": [
+      1,
+      5
+    ],
+    "cost": 60,
+    "description": "5-tile wooden bridge spanning water (vertical). Carries walkers and roads.",
+    "category": "infra",
+    "bridges_water": true,
+    "construction_ticks": 10
+  },
+  "wooden_bridge_v10": {
+    "name": "Wooden Bridge 10 \u2193",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "size": [
+      1,
+      10
+    ],
+    "cost": 110,
+    "description": "10-tile wooden bridge spanning water (vertical). Carries walkers and roads.",
+    "category": "infra",
+    "bridges_water": true,
+    "construction_ticks": 15
+  },
+  "stone_bridge_h5": {
+    "name": "Stone Bridge 5 \u2192",
+    "color": [
+      140,
+      140,
+      145
+    ],
+    "size": [
+      5,
+      1
+    ],
+    "cost": 180,
+    "description": "5-tile stone bridge spanning water. Durable. Needs planks and stone.",
+    "category": "infra",
+    "bridges_water": true,
+    "material_cost": {
+      "planks": 4,
+      "stone_blocks": 6
+    },
+    "construction_ticks": 30
+  },
+  "stone_bridge_h10": {
+    "name": "Stone Bridge 10 \u2192",
+    "color": [
+      140,
+      140,
+      145
+    ],
+    "size": [
+      10,
+      1
+    ],
+    "cost": 340,
+    "description": "10-tile stone bridge spanning water. Durable. Needs planks and stone.",
+    "category": "infra",
+    "bridges_water": true,
+    "material_cost": {
+      "planks": 8,
+      "stone_blocks": 12
+    },
+    "construction_ticks": 45
+  },
+  "stone_bridge_v5": {
+    "name": "Stone Bridge 5 \u2193",
+    "color": [
+      140,
+      140,
+      145
+    ],
+    "size": [
+      1,
+      5
+    ],
+    "cost": 180,
+    "description": "5-tile stone bridge spanning water (vertical). Needs planks and stone.",
+    "category": "infra",
+    "bridges_water": true,
+    "material_cost": {
+      "planks": 4,
+      "stone_blocks": 6
+    },
+    "construction_ticks": 30
+  },
+  "stone_bridge_v10": {
+    "name": "Stone Bridge 10 \u2193",
+    "color": [
+      140,
+      140,
+      145
+    ],
+    "size": [
+      1,
+      10
+    ],
+    "cost": 340,
+    "description": "10-tile stone bridge spanning water (vertical). Needs planks and stone.",
+    "category": "infra",
+    "bridges_water": true,
+    "material_cost": {
+      "planks": 8,
+      "stone_blocks": 12
+    },
+    "construction_ticks": 45
+  },
+  "house": {
+    "name": "House",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 30,
+    "housing": 10,
+    "description": "Houses citizens; evolves with services",
+    "category": "housing",
+    "tier_max": 4,
+    "needs_services": {
+      "water": 0.0
+    },
+    "material_cost": {
+      "planks": 1
+    }
+  },
+  "farm": {
+    "name": "Wheat Farm",
+    "color": [
+      200,
+      180,
+      60
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 80,
+    "production": {
+      "wheat": 12
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Grows wheat. Send to a windmill, then to a bakery for bread. +50% yield on fertile soil.",
+    "category": "agriculture",
+    "requires_road": true,
+    "feature_yield_bonus": {
+      "fertile_soil": 1.5
+    },
+    "construction_ticks": 15
+  },
+  "lumber_mill": {
+    "name": "Lumber Mill",
+    "color": [
+      140,
+      100,
+      60
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 60,
+    "production": {
+      "wood": 8
+    },
+    "workers": 4,
+    "worker_role": "worker",
+    "description": "Fells trees for wood. Must sit on a forest tile.",
+    "category": "industry",
+    "requires_road": true,
+    "needs_feature": [
+      "forest"
+    ],
+    "construction_ticks": 15
+  },
+  "quarry": {
+    "name": "Quarry",
+    "color": [
+      150,
+      150,
+      150
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 90,
+    "production": {
+      "stone": 5
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Quarries stone from rock deposits. Must sit on a stone deposit.",
+    "category": "industry",
+    "requires_road": true,
+    "needs_feature": [
+      "stone_deposit"
+    ],
+    "construction_ticks": 20
+  },
+  "stonemason": {
+    "name": "Stonemason",
+    "color": [
+      170,
+      170,
+      175
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 120,
+    "production": {
+      "stone_blocks": 4
+    },
+    "consumption": {
+      "stone": 2
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Cuts raw stone into building blocks for civic construction.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 25
+  },
+  "sawmill": {
+    "name": "Sawmill",
+    "color": [
+      165,
+      120,
+      75
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 110,
+    "production": {
+      "planks": 5
+    },
+    "consumption": {
+      "wood": 3
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Cuts wood into planks for fine houses. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 20
+  },
+  "windmill": {
+    "name": "Windmill",
+    "color": [
+      220,
+      210,
+      170
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 100,
+    "production": {
+      "flour": 7
+    },
+    "consumption": {
+      "wheat": 4
+    },
+    "workers": 3,
+    "worker_role": "worker",
+    "description": "Mills wheat into flour. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 20
+  },
+  "mine": {
+    "name": "Iron Mine",
+    "color": [
+      100,
+      100,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 100,
+    "production": {
+      "iron_ore": 6
+    },
+    "consumption": {
+      "wood": 2
+    },
+    "workers": 8,
+    "worker_role": "worker",
+    "description": "Mines iron ore from iron veins. Refined into iron at the iron smelter.",
+    "category": "mining",
+    "requires_road": true,
+    "needs_feature": [
+      "iron_vein"
+    ],
+    "construction_ticks": 20
+  },
+  "copper_mine": {
+    "name": "Copper Mine",
+    "color": [
+      150,
+      90,
+      55
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 110,
+    "production": {
+      "copper_ore": 6
+    },
+    "consumption": {
+      "wood": 2
+    },
+    "workers": 8,
+    "worker_role": "worker",
+    "description": "Mines copper ore from copper veins. Refined into copper at the copper smelter.",
+    "category": "mining",
+    "requires_road": true,
+    "needs_feature": [
+      "copper_vein"
+    ],
+    "construction_ticks": 20
+  },
+  "gold_mine": {
+    "name": "Gold Mine",
+    "color": [
+      200,
+      170,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 140,
+    "production": {
+      "gold_ore": 5
+    },
+    "consumption": {
+      "wood": 2
+    },
+    "workers": 8,
+    "worker_role": "worker",
+    "description": "Mines gold ore from gold veins. Refined into gold bars at the gold smelter.",
+    "category": "mining",
+    "requires_road": true,
+    "needs_feature": [
+      "gold_vein"
+    ],
+    "construction_ticks": 25
+  },
+  "smelter": {
+    "name": "Iron Smelter",
+    "color": [
+      130,
+      80,
+      60
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 140,
+    "production": {
+      "iron": 5
+    },
+    "consumption": {
+      "iron_ore": 4,
+      "wood": 1
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Refines iron ore into iron bars. Feeds the weapon smith and factory. Needs road.",
+    "category": "mining",
+    "requires_road": true,
+    "construction_ticks": 25
+  },
+  "copper_smelter": {
+    "name": "Copper Smelter",
+    "color": [
+      160,
+      95,
+      55
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 150,
+    "production": {
+      "copper": 4
+    },
+    "consumption": {
+      "copper_ore": 4,
+      "wood": 1
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Refines copper ore into copper ingots. Needs road.",
+    "category": "mining",
+    "requires_road": true,
+    "construction_ticks": 25
+  },
+  "gold_smelter": {
+    "name": "Gold Smelter",
+    "color": [
+      210,
+      175,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 180,
+    "production": {
+      "gold": 3
+    },
+    "consumption": {
+      "gold_ore": 4,
+      "wood": 1
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Refines gold ore into gold bars. Feeds the treasury and luxury chains. Needs road.",
+    "category": "mining",
+    "requires_road": true,
+    "construction_ticks": 30
+  },
+  "bakery": {
+    "name": "Bakery",
+    "color": [
+      210,
+      170,
+      110
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 70,
+    "production": {
+      "bread": 10
+    },
+    "consumption": {
+      "flour": 2,
+      "wood": 1
+    },
+    "workers": 3,
+    "worker_role": "worker",
+    "description": "Bakes bread (nutrient) from flour. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "construction_ticks": 18
+  },
+  "market": {
+    "name": "Market",
+    "color": [
+      180,
+      50,
+      50
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 120,
+    "production": {
+      "money": 25
+    },
+    "consumption": {
+      "bread": 3
+    },
+    "workers": 5,
+    "worker_role": "trader",
+    "description": "Sells bread to citizens for denarii. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "provides_service": "food",
+    "service_radius": 4,
+    "service_intensity": 1.0,
+    "construction_ticks": 20
+  },
+  "factory": {
+    "name": "Factory",
+    "color": [
+      90,
+      90,
+      100
+    ],
+    "size": [
+      2,
+      1
+    ],
+    "cost": 200,
+    "production": {
+      "tools": 5,
+      "money": 10
+    },
+    "consumption": {
+      "iron": 3,
+      "wood": 2
+    },
+    "workers": 10,
+    "worker_role": "worker",
+    "description": "Makes tools & money. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 35
+  },
+  "tavern": {
+    "name": "Tavern",
+    "color": [
+      160,
+      110,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 90,
+    "production": {
+      "happiness": 5
+    },
+    "consumption": {
+      "bread": 2,
+      "wine": 1
+    },
+    "workers": 3,
+    "description": "Boosts happiness with bread and wine; provides entertainment",
+    "category": "entertainment",
+    "provides_service": "entertainment",
+    "service_radius": 3,
+    "service_intensity": 0.5,
+    "construction_ticks": 18
+  },
+  "theatre": {
+    "name": "Theatre",
+    "color": [
+      170,
+      130,
+      180
+    ],
+    "size": [
+      2,
+      1
+    ],
+    "cost": 150,
+    "production": {
+      "happiness": 10
+    },
+    "consumption": {
+      "money": 5
+    },
+    "workers": 6,
+    "description": "Major happiness boost; entertainment service",
+    "category": "entertainment",
+    "provides_service": "entertainment",
+    "service_radius": 5,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 2
+    },
+    "construction_ticks": 40
+  },
+  "temple": {
+    "name": "Temple",
+    "color": [
+      220,
+      210,
+      180
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 250,
+    "production": {
+      "happiness": 15
+    },
+    "consumption": {
+      "money": 8
+    },
+    "workers": 4,
+    "description": "Great happiness boost; provides religion",
+    "category": "religion",
+    "provides_service": "religion",
+    "service_radius": 6,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 4
+    },
+    "construction_ticks": 50
+  },
+  "olive_farm": {
+    "name": "Olive Farm",
+    "color": [
+      150,
+      170,
+      90
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 90,
+    "production": {
+      "olives": 12
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Grows olives. Needs road.",
+    "category": "agriculture",
+    "requires_road": true,
+    "construction_ticks": 15
+  },
+  "olive_press": {
+    "name": "Olive Press",
+    "color": [
+      180,
+      160,
+      80
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 110,
+    "production": {
+      "oil": 8
+    },
+    "consumption": {
+      "olives": 4
+    },
+    "workers": 4,
+    "worker_role": "worker",
+    "description": "Presses olives into oil. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 18
+  },
+  "vineyard": {
+    "name": "Vineyard",
+    "color": [
+      120,
+      60,
+      100
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 100,
+    "production": {
+      "grapes": 12
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Grows grapes. Needs road.",
+    "category": "agriculture",
+    "requires_road": true,
+    "construction_ticks": 15
+  },
+  "wine_press": {
+    "name": "Wine Press",
+    "color": [
+      100,
+      40,
+      80
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 130,
+    "production": {
+      "wine": 8
+    },
+    "consumption": {
+      "grapes": 4
+    },
+    "workers": 4,
+    "worker_role": "worker",
+    "description": "Presses grapes into wine. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 22
+  },
+  "clay_pit": {
+    "name": "Clay Pit",
+    "color": [
+      170,
+      110,
+      80
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 70,
+    "production": {
+      "clay": 10
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Extracts clay from clay deposits on the map. Needs road.",
+    "category": "mining",
+    "requires_road": true,
+    "needs_feature": [
+      "clay_deposit"
+    ],
+    "construction_ticks": 15
+  },
+  "pottery_workshop": {
+    "name": "Pottery Workshop",
+    "color": [
+      200,
+      130,
+      90
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 90,
+    "production": {
+      "pottery": 6
+    },
+    "consumption": {
+      "clay": 3
+    },
+    "workers": 4,
+    "worker_role": "worker",
+    "description": "Makes pottery from clay. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 18
+  },
+  "weapon_smith": {
+    "name": "Weapon Smith",
+    "color": [
+      80,
+      80,
+      100
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 180,
+    "production": {
+      "weapons": 4
+    },
+    "consumption": {
+      "iron": 3,
+      "wood": 1
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Forges weapons from iron and wood. Needs road.",
+    "category": "industry",
+    "requires_road": true,
+    "construction_ticks": 25
+  },
+  "granary": {
+    "name": "Granary",
+    "color": [
+      200,
+      170,
+      100
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 150,
+    "workers": 4,
+    "storage": 800,
+    "description": "Stores nutrients (bread, fish, meat, ...). Walkers distribute to nearby houses. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "provides_service": "food",
+    "service_radius": 5,
+    "service_intensity": 1.0,
+    "construction_ticks": 40
+  },
+  "senate": {
+    "name": "Senate",
+    "color": [
+      220,
+      200,
+      150
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 600,
+    "production": {
+      "money": 20
+    },
+    "workers": 8,
+    "description": "Seat of government. Tracks city prosperity. Needs road.",
+    "category": "politic",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 8,
+      "planks": 4
+    },
+    "construction_ticks": 100
+  },
+  "warehouse": {
+    "name": "Warehouse",
+    "color": [
+      130,
+      120,
+      100
+    ],
+    "size": [
+      2,
+      1
+    ],
+    "cost": 100,
+    "workers": 2,
+    "storage": 500,
+    "description": "+500 storage for raw goods (stone, planks, iron, tools, weapons, ...). Does not store nutrients. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "construction_ticks": 30
+  },
+  "port": {
+    "name": "Port",
+    "color": [
+      60,
+      90,
+      150
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 300,
+    "production": {
+      "money": 30
+    },
+    "consumption": {
+      "wood": 3
+    },
+    "workers": 8,
+    "worker_role": "trader",
+    "needs_terrain": "water",
+    "description": "Enables overseas trade. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "construction_ticks": 50
+  },
+  "commercial_port": {
+    "name": "Commercial Port",
+    "color": [
+      70,
+      110,
+      160
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 350,
+    "upkeep": 1,
+    "production": {
+      "money": 30
+    },
+    "consumption": {
+      "wood": 3
+    },
+    "workers": 8,
+    "storage": 400,
+    "category": "commerce",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "port_role": "commercial",
+    "ship_slots": 0,
+    "construction_ticks": 40,
+    "material_cost": {
+      "wood": 20,
+      "stone_blocks": 10
+    },
+    "description": "Coastal trade port. A buffer that loads city goods onto trade ships and unloads imports into warehouses. Must touch water."
+  },
+  "military_port": {
+    "name": "Military Port",
+    "color": [
+      150,
+      70,
+      70
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 400,
+    "upkeep": 1,
+    "production": {},
+    "consumption": {
+      "wood": 2
+    },
+    "workers": 6,
+    "category": "military",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "port_role": "military",
+    "ship_slots": 0,
+    "construction_ticks": 50,
+    "material_cost": {
+      "wood": 24,
+      "stone_blocks": 14
+    },
+    "description": "Coastal military port. Embarks legionaries onto transports and berths warships. Must touch water."
+  },
+  "commercial_shipyard": {
+    "name": "Commercial Shipyard",
+    "color": [
+      60,
+      120,
+      140
+    ],
+    "size": [
+      2,
+      3
+    ],
+    "cost": 500,
+    "upkeep": 1,
+    "consumption": {
+      "wood": 5,
+      "planks": 2
+    },
+    "workers": 10,
+    "category": "commerce",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "ship_kind": "trade_ship",
+    "port_role": "commercial",
+    "construction_ticks": 70,
+    "material_cost": {
+      "wood": 40,
+      "planks": 12,
+      "stone_blocks": 10
+    },
+    "description": "Builds trade ships and launches them onto an adjacent water tile. Consumes wood + planks while building a hull."
+  },
+  "military_shipyard": {
+    "name": "Military Shipyard",
+    "color": [
+      140,
+      60,
+      60
+    ],
+    "size": [
+      2,
+      3
+    ],
+    "cost": 650,
+    "upkeep": 1,
+    "consumption": {
+      "wood": 6,
+      "planks": 3,
+      "iron": 1
+    },
+    "workers": 12,
+    "category": "military",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "ship_kind": "warship",
+    "port_role": "military",
+    "construction_ticks": 90,
+    "material_cost": {
+      "wood": 50,
+      "planks": 16,
+      "iron": 8,
+      "stone_blocks": 14
+    },
+    "description": "Builds warships (and troop transports) and launches them onto adjacent water. Consumes wood, planks and iron."
+  },
+  "commercial_harbor": {
+    "name": "Commercial Harbor",
+    "color": [
+      80,
+      130,
+      180
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 700,
+    "upkeep": 1,
+    "consumption": {
+      "wood": 4
+    },
+    "workers": 14,
+    "category": "commerce",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "port_role": "commercial",
+    "ship_slots": 10,
+    "construction_ticks": 100,
+    "material_cost": {
+      "wood": 50,
+      "stone_blocks": 30,
+      "planks": 10
+    },
+    "description": "Large trade harbor with 10 berths sheltering idle trade ships. Ships dock here; goods are buffered at the commercial port, not the harbor. Must touch water."
+  },
+  "military_harbor": {
+    "name": "Military Harbor",
+    "color": [
+      170,
+      60,
+      60
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 800,
+    "upkeep": 1,
+    "consumption": {
+      "wood": 4,
+      "iron": 1
+    },
+    "workers": 16,
+    "category": "military",
+    "requires_road": true,
+    "needs_water_adjacent": true,
+    "port_role": "military",
+    "ship_slots": 10,
+    "construction_ticks": 120,
+    "material_cost": {
+      "wood": 60,
+      "stone_blocks": 40,
+      "planks": 14,
+      "iron": 6
+    },
+    "description": "Naval harbor with 10 berths sheltering idle warships and transports. Ships dock here; troop transfer happens at the military port. Must touch water."
+  },
+  "well": {
+    "name": "Well",
+    "color": [
+      120,
+      140,
+      160
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 25,
+    "description": "Provides water in a small radius",
+    "category": "water",
+    "provides_service": "water",
+    "service_radius": 2,
+    "service_intensity": 0.5
+  },
+  "fountain": {
+    "name": "Fountain",
+    "color": [
+      110,
+      160,
+      200
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 80,
+    "description": "Wide water coverage; needs adjacent watered aqueduct OR groundwater spot",
+    "category": "water",
+    "provides_service": "water",
+    "service_radius": 4,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 1
+    }
+  },
+  "aqueduct": {
+    "name": "Aqueduct",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 15,
+    "description": "Carries water from rivers to fountains",
+    "category": "water",
+    "needs_water_source": true,
+    "material_cost": {
+      "stone_blocks": 1
+    }
+  },
+  "reservoir": {
+    "name": "Reservoir",
+    "color": [
+      100,
+      150,
+      200
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 200,
+    "description": "Inland water source. Acts as a virtual water tile for adjacent aqueducts. Must touch a lake or river.",
+    "category": "water",
+    "needs_water_adjacent": true,
+    "material_cost": {
+      "stone_blocks": 6
+    },
+    "construction_ticks": 35
+  },
+  "school": {
+    "name": "School",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 140,
+    "consumption": {
+      "money": 4
+    },
+    "workers": 6,
+    "description": "Provides basic education in a small radius.",
+    "category": "education",
+    "provides_service": "education",
+    "service_radius": 3,
+    "service_intensity": 0.5,
+    "material_cost": {
+      "planks": 2
+    },
+    "construction_ticks": 30
+  },
+  "library": {
+    "name": "Library",
+    "color": [
+      190,
+      150,
+      90
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 240,
+    "consumption": {
+      "money": 8
+    },
+    "workers": 8,
+    "description": "Higher learning. Larger education radius and full intensity.",
+    "category": "education",
+    "provides_service": "education",
+    "service_radius": 5,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 1
+    },
+    "construction_ticks": 50
+  },
+  "clinic": {
+    "name": "Clinic",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 100,
+    "consumption": {
+      "money": 3
+    },
+    "workers": 4,
+    "description": "Basic health service in a small radius.",
+    "category": "health",
+    "provides_service": "health",
+    "service_radius": 3,
+    "service_intensity": 0.5,
+    "material_cost": {
+      "planks": 1
+    },
+    "construction_ticks": 18
+  },
+  "hospital": {
+    "name": "Hospital",
+    "color": [
+      240,
+      230,
+      220
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 320,
+    "consumption": {
+      "money": 12
+    },
+    "workers": 10,
+    "description": "Full health coverage in a wide radius.",
+    "category": "health",
+    "provides_service": "health",
+    "service_radius": 6,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 5,
+      "planks": 2
+    },
+    "construction_ticks": 60
+  },
+  "prefecture": {
+    "name": "Prefecture",
+    "color": [
+      120,
+      80,
+      60
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 80,
+    "consumption": {
+      "money": 2
+    },
+    "workers": 4,
+    "worker_role": "prefect",
+    "description": "Watches over the city. Improves safety nearby and dispatches a Fireman walker that extinguishes burning buildings within Chebyshev 4 (v0.29).",
+    "category": "security",
+    "provides_service": "safety",
+    "service_radius": 4,
+    "service_intensity": 1.0,
+    "requires_road": true,
+    "material_cost": {
+      "planks": 1
+    }
+  },
+  "engineer_post": {
+    "name": "Engineer Post",
+    "color": [
+      180,
+      120,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 70,
+    "consumption": {
+      "money": 2
+    },
+    "workers": 3,
+    "description": "Maintains nearby buildings (placeholder).",
+    "category": "security",
+    "provides_service": "maintenance",
+    "service_radius": 4,
+    "service_intensity": 1.0,
+    "requires_road": true,
+    "material_cost": {
+      "planks": 1
+    }
+  },
+  "barracks": {
+    "name": "Barracks",
+    "color": [
+      140,
+      60,
+      50
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 280,
+    "consumption": {
+      "weapons": 1,
+      "money": 4
+    },
+    "workers": 6,
+    "worker_role": "soldier",
+    "description": "Trains and houses Light Infantry. Consumes weapons.",
+    "category": "military",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 4,
+      "planks": 2
+    },
+    "spawn_unit": "light_infantry",
+    "construction_ticks": 60
+  },
+  "fort": {
+    "name": "Fort",
+    "color": [
+      90,
+      40,
+      40
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 400,
+    "consumption": {
+      "money": 6
+    },
+    "workers": 4,
+    "worker_role": "soldier",
+    "description": "Garrisons Heavy Infantry Legionaries. Boosts defence.",
+    "category": "military",
+    "requires_road": true,
+    "provides_service": "defence",
+    "service_radius": 6,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 6,
+      "planks": 2
+    },
+    "spawn_unit": "heavy_infantry",
+    "construction_ticks": 70
+  },
+  "fort_cavalry": {
+    "name": "Cavalry Fort",
+    "color": [
+      120,
+      55,
+      45
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 480,
+    "consumption": {
+      "money": 8,
+      "horses": 1
+    },
+    "workers": 4,
+    "worker_role": "soldier",
+    "description": "Stables Heavy Cavalry. Boosts defence; consumes horses.",
+    "category": "military",
+    "requires_road": true,
+    "provides_service": "defence",
+    "service_radius": 6,
+    "service_intensity": 1.0,
+    "material_cost": {
+      "stone_blocks": 6,
+      "planks": 3,
+      "horses": 2
+    },
+    "spawn_unit": "heavy_cavalry",
+    "construction_ticks": 75
+  },
+  "archery_range": {
+    "name": "Archery Range",
+    "color": [
+      130,
+      90,
+      60
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 320,
+    "consumption": {
+      "money": 5,
+      "weapons": 1
+    },
+    "workers": 5,
+    "worker_role": "soldier",
+    "description": "Trains Bowmen. Ranged units that engage at distance.",
+    "category": "military",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 4
+    },
+    "spawn_unit": "bowman",
+    "construction_ticks": 65
+  },
+  "tower": {
+    "name": "Watchtower",
+    "color": [
+      110,
+      90,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 60,
+    "workers": 1,
+    "description": "Spots threats with Scout Squadrons. Boosts defence in a small radius.",
+    "category": "military",
+    "provides_service": "defence",
+    "service_radius": 3,
+    "service_intensity": 0.5,
+    "material_cost": {
+      "stone_blocks": 1
+    },
+    "spawn_unit": "scout"
+  },
+  "vegetable_farm": {
+    "name": "Vegetable Grower",
+    "color": [
+      120,
+      170,
+      80
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 80,
+    "production": {
+      "vegetables": 10
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "description": "Grows vegetables (nutrient). +50% yield on fertile soil.",
+    "category": "agriculture",
+    "requires_road": true,
+    "feature_yield_bonus": {
+      "fertile_soil": 1.5
+    },
+    "construction_ticks": 15
+  },
+  "orchard": {
+    "name": "Orchard",
+    "color": [
+      200,
+      90,
+      90
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 90,
+    "production": {
+      "fruits": 8
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Grows fruits (nutrient). +50% yield on fertile soil.",
+    "category": "agriculture",
+    "requires_road": true,
+    "feature_yield_bonus": {
+      "fertile_soil": 1.5
+    },
+    "construction_ticks": 18
+  },
+  "pasturage": {
+    "name": "Pasturage Field",
+    "color": [
+      180,
+      160,
+      120
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 100,
+    "production": {
+      "livestock": 6
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Raises livestock for slaughterhouse. Needs road.",
+    "category": "agriculture",
+    "requires_road": true,
+    "construction_ticks": 18
+  },
+  "slaughterhouse": {
+    "name": "Slaughterhouse",
+    "color": [
+      150,
+      60,
+      50
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 120,
+    "production": {
+      "meat": 8
+    },
+    "consumption": {
+      "livestock": 4
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Butchers livestock into meat (nutrient). Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "construction_ticks": 22
+  },
+  "butcher_shop": {
+    "name": "Butcher Shop",
+    "color": [
+      180,
+      80,
+      70
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 70,
+    "consumption": {
+      "meat": 1
+    },
+    "workers": 3,
+    "worker_role": "trader",
+    "description": "Distributes meat to nearby houses. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "provides_service": "food",
+    "service_radius": 3,
+    "service_intensity": 1.0,
+    "construction_ticks": 12
+  },
+  "fishery": {
+    "name": "Fishery",
+    "color": [
+      80,
+      130,
+      180
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 120,
+    "production": {
+      "fish": 350
+    },
+    "workers": 6,
+    "worker_role": "worker",
+    "needs_terrain": "water",
+    "description": "Catches fish (nutrient) from fish-bearing water tiles. Must touch a water tile with fish. Needs road.",
+    "category": "agriculture",
+    "requires_road": true,
+    "construction_ticks": 25
+  },
+  "fishmonger": {
+    "name": "Fishmonger",
+    "color": [
+      110,
+      150,
+      200
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 70,
+    "consumption": {
+      "fish": 1
+    },
+    "workers": 3,
+    "worker_role": "trader",
+    "description": "Distributes fish to nearby houses. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "provides_service": "food",
+    "service_radius": 3,
+    "service_intensity": 1.0,
+    "construction_ticks": 12
+  },
+  "cheese_maker": {
+    "name": "Cheese Shop",
+    "color": [
+      240,
+      220,
+      130
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 110,
+    "production": {
+      "cheese": 6
+    },
+    "consumption": {
+      "livestock": 2
+    },
+    "workers": 4,
+    "worker_role": "worker",
+    "description": "Makes cheese (nutrient) from livestock. Needs road.",
+    "category": "commerce",
+    "requires_road": true,
+    "construction_ticks": 22
+  },
+  "spice_field": {
+    "name": "Spice Field",
+    "color": [
+      180,
+      100,
+      50
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 100,
+    "production": {
+      "spice": 5
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Grows spices (nutrient). +50% yield on fertile soil.",
+    "category": "agriculture",
+    "requires_road": true,
+    "feature_yield_bonus": {
+      "fertile_soil": 1.5
+    },
+    "construction_ticks": 18
+  },
+  "beekeeper": {
+    "name": "Beekeeper",
+    "color": [
+      210,
+      180,
+      60
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 80,
+    "production": {
+      "honey": 4
+    },
+    "workers": 3,
+    "worker_role": "worker",
+    "description": "Tends beehives, produces honey (nutrient). Needs road.",
+    "category": "agriculture",
+    "requires_road": true,
+    "construction_ticks": 12
+  },
+  "stable": {
+    "name": "Stable",
+    "color": [
+      120,
+      90,
+      60
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 180,
+    "production": {
+      "horses": 2
+    },
+    "consumption": {
+      "wheat": 3
+    },
+    "workers": 5,
+    "worker_role": "worker",
+    "description": "Breeds horses (cavalry). Consumes wheat. Needs road.",
+    "category": "military",
+    "requires_road": true,
+    "material_cost": {
+      "planks": 2
+    },
+    "construction_ticks": 40
+  },
+  "military_manufacture": {
+    "name": "Military Manufacture",
+    "color": [
+      100,
+      75,
+      55
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 520,
+    "consumption": {
+      "money": 8,
+      "weapons": 1,
+      "iron": 2,
+      "wood": 2
+    },
+    "workers": 8,
+    "worker_role": "soldier",
+    "description": "Manufactures and crews ballistae. Consumes weapons, iron, and wood. Trains the Ballista siege engine.",
+    "category": "military",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 5,
+      "planks": 6,
+      "iron": 2
+    },
+    "spawn_unit": "ballista",
+    "construction_ticks": 40
+  },
+  "forum": {
+    "name": "Forum",
+    "color": [
+      210,
+      180,
+      140
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 350,
+    "production": {
+      "money": 12
+    },
+    "workers": 6,
+    "description": "Public square for civic life. Generates tax revenue and provides entertainment in its radius. Needs road.",
+    "category": "politic",
+    "requires_road": true,
+    "provides_service": "entertainment",
+    "service_radius": 5,
+    "service_intensity": 0.5,
+    "material_cost": {
+      "stone_blocks": 4,
+      "planks": 2
+    },
+    "construction_ticks": 60
+  },
+  "consulate": {
+    "name": "Consulate",
+    "color": [
+      200,
+      170,
+      110
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 500,
+    "consumption": {
+      "money": 6
+    },
+    "workers": 6,
+    "description": "Seat of consular authority. Improves diplomacy and unlocks higher-tier civic prestige. Needs road.",
+    "category": "politic",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 5,
+      "planks": 3
+    },
+    "construction_ticks": 75
+  },
+  "embassy": {
+    "name": "Embassy",
+    "color": [
+      180,
+      150,
+      200
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 450,
+    "consumption": {
+      "money": 5
+    },
+    "workers": 5,
+    "description": "Houses foreign emissaries. Improves trade-route relations and dampens Caesar's anger. Needs road.",
+    "category": "politic",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 3
+    },
+    "construction_ticks": 65
+  },
+  "caesar_hostel": {
+    "name": "Caesar Hostel",
+    "color": [
+      230,
+      200,
+      100
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 800,
+    "consumption": {
+      "money": 10,
+      "wine": 1
+    },
+    "workers": 10,
+    "description": "Luxury residence for Caesar's envoys. Major reputation boost; consumes wine. Needs road.",
+    "category": "politic",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 10,
+      "planks": 5
+    },
+    "construction_ticks": 110
+  },
+  "chess_school": {
+    "name": "Chess School",
+    "color": [
+      120,
+      120,
+      140
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 180,
+    "consumption": {
+      "money": 4
+    },
+    "workers": 5,
+    "description": "Teaches strategy and logic. Provides education in its radius.",
+    "category": "education",
+    "provides_service": "education",
+    "service_radius": 4,
+    "service_intensity": 0.75,
+    "material_cost": {
+      "planks": 2
+    },
+    "construction_ticks": 35
+  },
+  "painting_school": {
+    "name": "Painting School",
+    "color": [
+      200,
+      100,
+      130
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 200,
+    "consumption": {
+      "money": 5
+    },
+    "workers": 5,
+    "description": "Teaches painting and visual art. Provides education and small happiness bonus.",
+    "category": "education",
+    "provides_service": "education",
+    "service_radius": 4,
+    "service_intensity": 0.75,
+    "material_cost": {
+      "planks": 2
+    },
+    "construction_ticks": 35
+  },
+  "music_school": {
+    "name": "Music School",
+    "color": [
+      140,
+      180,
+      200
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 200,
+    "consumption": {
+      "money": 5
+    },
+    "workers": 5,
+    "description": "Teaches music. Provides education and small entertainment bonus.",
+    "category": "education",
+    "provides_service": "education",
+    "service_radius": 4,
+    "service_intensity": 0.75,
+    "material_cost": {
+      "planks": 2
+    },
+    "construction_ticks": 35
+  },
+  "bath": {
+    "name": "Public Bath",
+    "color": [
+      120,
+      180,
+      200
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 180,
+    "consumption": {
+      "money": 4
+    },
+    "workers": 5,
+    "description": "Public baths. Provides health and a small happiness boost. Needs water nearby.",
+    "category": "health",
+    "provides_service": "health",
+    "service_radius": 4,
+    "service_intensity": 0.75,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 1
+    },
+    "construction_ticks": 40
+  },
+  "dentist": {
+    "name": "Dentist",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "size": [
+      1,
+      1
+    ],
+    "cost": 130,
+    "consumption": {
+      "money": 3
+    },
+    "workers": 3,
+    "description": "Specialist health service for tooth ailments. Small radius.",
+    "category": "health",
+    "provides_service": "health",
+    "service_radius": 3,
+    "service_intensity": 0.5,
+    "material_cost": {
+      "planks": 1
+    },
+    "construction_ticks": 20
+  },
+  "sanitarium": {
+    "name": "Sanitarium",
+    "color": [
+      230,
+      220,
+      210
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 380,
+    "consumption": {
+      "money": 14
+    },
+    "workers": 12,
+    "description": "Treats chronic illness. Wide-radius high-intensity health service. Needs road.",
+    "category": "health",
+    "provides_service": "health",
+    "service_radius": 7,
+    "service_intensity": 1.0,
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 6,
+      "planks": 2
+    },
+    "construction_ticks": 70
+  },
+  "coliseum": {
+    "name": "Coliseum",
+    "color": [
+      180,
+      100,
+      70
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 700,
+    "production": {
+      "happiness": 25
+    },
+    "consumption": {
+      "money": 12
+    },
+    "workers": 14,
+    "description": "Massive games arena. Huge entertainment radius; consumes money. Needs road.",
+    "category": "entertainment",
+    "provides_service": "entertainment",
+    "service_radius": 8,
+    "service_intensity": 1.0,
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 12,
+      "planks": 4
+    },
+    "construction_ticks": 120
+  },
+  "zoo": {
+    "name": "Zoo",
+    "color": [
+      140,
+      170,
+      110
+    ],
+    "size": [
+      3,
+      3
+    ],
+    "cost": 450,
+    "production": {
+      "happiness": 15
+    },
+    "consumption": {
+      "money": 8,
+      "meat": 1
+    },
+    "workers": 8,
+    "description": "Exotic animals on display. Provides entertainment; consumes meat for the animals. Needs road.",
+    "category": "entertainment",
+    "provides_service": "entertainment",
+    "service_radius": 6,
+    "service_intensity": 1.0,
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 5,
+      "planks": 3
+    },
+    "construction_ticks": 90
+  },
+  "local_bank": {
+    "name": "Local Bank",
+    "color": [
+      180,
+      160,
+      90
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 250,
+    "production": {
+      "money": 18
+    },
+    "workers": 4,
+    "worker_role": "trader",
+    "description": "Neighborhood bank. Steady money production; safer but lower yield. Needs road.",
+    "category": "bank",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 2,
+      "planks": 2
+    },
+    "construction_ticks": 40
+  },
+  "business_bank": {
+    "name": "Business Bank",
+    "color": [
+      200,
+      175,
+      80
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 400,
+    "production": {
+      "money": 35
+    },
+    "consumption": {
+      "money": 5
+    },
+    "workers": 6,
+    "worker_role": "trader",
+    "description": "Bank serving commerce. Higher money yield with operating overhead. Needs road.",
+    "category": "bank",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 3,
+      "planks": 3
+    },
+    "construction_ticks": 55
+  },
+  "private_bank": {
+    "name": "Private Bank",
+    "color": [
+      220,
+      180,
+      70
+    ],
+    "size": [
+      2,
+      2
+    ],
+    "cost": 600,
+    "production": {
+      "money": 55
+    },
+    "consumption": {
+      "money": 10
+    },
+    "workers": 8,
+    "worker_role": "trader",
+    "description": "Elite private bank. Highest money yield; expensive overhead. Needs road.",
+    "category": "bank",
+    "requires_road": true,
+    "material_cost": {
+      "stone_blocks": 4,
+      "planks": 4
+    },
+    "construction_ticks": 75
+  }
+}

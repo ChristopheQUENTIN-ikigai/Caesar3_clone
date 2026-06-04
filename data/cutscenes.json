@@ -1,0 +1,19 @@
+[
+  {
+    "id": "intro_welcome",
+    "title": "Welcome to Caesar III",
+    "trigger_flag": "game_started",
+    "slides": [
+      {
+        "image": "throne_room",
+        "caption": "Year 58 BC",
+        "body": "Caesar stands in the throne room as the senate gathers. The empire's borders stretch from Hispania to the Bosphorus, but Rome's fortunes rest in the hands of governors like you. Your city will rise or fall by your wisdom."
+      },
+      {
+        "image": "forum",
+        "caption": "A Governor's Duty",
+        "body": "Build your roads. House your citizens. Stock your granaries. Pay tribute to Rome when Caesar asks — or refuse and face the consequences."
+      }
+    ]
+  }
+]

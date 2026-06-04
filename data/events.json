@@ -1,0 +1,163 @@
+[
+    {
+        "name": "Famine",
+        "effects": {
+            "food": -150
+        },
+        "pop": -8,
+        "happy": -15,
+        "msg": "A terrible famine strikes!",
+        "color": [
+            200,
+            60,
+            60
+        ]
+    },
+    {
+        "name": "Prosperity",
+        "effects": {
+            "food": 200,
+            "money": 100
+        },
+        "pop": 5,
+        "happy": 20,
+        "msg": "A period of great prosperity!",
+        "color": [
+            60,
+            180,
+            80
+        ]
+    },
+    {
+        "name": "Plague",
+        "effects": {},
+        "pop": -25,
+        "happy": -30,
+        "msg": "Plague ravages the city!",
+        "color": [
+            200,
+            60,
+            60
+        ]
+    },
+    {
+        "name": "Bumper Harvest",
+        "effects": {
+            "food": 400
+        },
+        "pop": 0,
+        "happy": 10,
+        "msg": "An incredible harvest! Granaries overflow.",
+        "color": [
+            60,
+            180,
+            80
+        ]
+    },
+    {
+        "name": "Trade Boom",
+        "effects": {
+            "money": 300
+        },
+        "pop": 0,
+        "happy": 5,
+        "msg": "Foreign traders flock to your markets!",
+        "color": [
+            220,
+            190,
+            80
+        ]
+    },
+    {
+        "name": "Barbarian Raid",
+        "effects": {
+            "food": -80,
+            "wood": -60,
+            "iron": -40
+        },
+        "pop": -10,
+        "happy": -20,
+        "msg": "Barbarians raid the outskirts!",
+        "color": [
+            200,
+            60,
+            60
+        ]
+    },
+    {
+        "name": "Festival",
+        "effects": {
+            "money": -50
+        },
+        "pop": 0,
+        "happy": 25,
+        "msg": "A grand festival lifts spirits!",
+        "color": [
+            220,
+            190,
+            80
+        ]
+    },
+    {
+        "name": "Mine Discovery",
+        "effects": {
+            "iron": 200
+        },
+        "pop": 0,
+        "happy": 5,
+        "msg": "A rich iron vein has been discovered!",
+        "color": [
+            60,
+            180,
+            80
+        ]
+    },
+    {
+        "name": "Drought",
+        "effects": {},
+        "pop": 0,
+        "happy": -10,
+        "msg": "Drought \u2014 wells run dry, farms wither.",
+        "color": [
+            220,
+            180,
+            100
+        ],
+        "duration_ticks": 60,
+        "modifiers": {
+            "water_factor": 0.4
+        }
+    },
+    {
+        "name": "Blizzard",
+        "effects": {},
+        "pop": 0,
+        "happy": -15,
+        "msg": "A blizzard hits — wood burns twice as fast; citizens freeze without fuel.",
+        "color": [
+            180,
+            210,
+            230
+        ],
+        "duration_ticks": 50,
+        "modifiers": {
+            "wood_consumption_factor": 2.0,
+            "pop_kill_when_resource_zero": [["wood", 1]]
+        }
+    },
+    {
+        "name": "Flood",
+        "effects": {
+            "wood": -40,
+            "food": -60
+        },
+        "pop": -5,
+        "happy": -10,
+        "msg": "Floodwaters surge — granaries and lumber yards damaged.",
+        "color": [
+            70,
+            130,
+            190
+        ]
+    }
+]

@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "name": "Sample: Riverside Hub",
+  "scenario": "default",
+  "nutrients": {
+    "bread": 30,
+    "vegetables": 0,
+    "fruits": 0,
+    "meat": 0,
+    "fish": 0,
+    "cheese": 0,
+    "oil": 0,
+    "honey": 0,
+    "spice": 0,
+    "wine": 0
+  },
+  "population": 50,
+  "workers": {
+    "worker": 30,
+    "trader": 10,
+    "soldier": 0,
+    "citizen": 10
+  },
+  "treasury": 1500,
+  "stocks": {
+    "stone": 100,
+    "stone_blocks": 50,
+    "iron": 150,
+    "wood": 300,
+    "tools": 50,
+    "planks": 20,
+    "wheat": 50,
+    "flour": 20,
+    "weapons": 0,
+    "olives": 0,
+    "grapes": 0,
+    "clay": 0,
+    "pottery": 0,
+    "livestock": 0,
+    "horses": 0
+  },
+  "army": {
+    "infantry": 0,
+    "cavalry": 0
+  },
+  "calendar": {
+    "year": 1,
+    "month": 1
+  },
+  "terrain": [],
+  "terrain_features": [],
+  "terrain_feature_state": [],
+  "buildings": [
+    {
+      "type": "house",
+      "row": 14,
+      "col": 10,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 14,
+      "col": 11,
+      "state": {}
+    },
+    {
+      "type": "house",
+      "row": 14,
+      "col": 12,
+      "state": {}
+    },
+    {
+      "type": "farm",
+      "row": 12,
+      "col": 10,
+      "state": {}
+    },
+    {
+      "type": "well",
+      "row": 14,
+      "col": 13,
+      "state": {}
+    }
+  ],
+  "roads": [
+    [
+      15,
+      10
+    ],
+    [
+      15,
+      11
+    ],
+    [
+      15,
+      12
+    ],
+    [
+      15,
+      13
+    ]
+  ]
+}

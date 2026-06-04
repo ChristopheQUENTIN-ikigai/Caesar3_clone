@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Southern Raiders",
+    "color": [
+      200,
+      60,
+      40
+    ],
+    "message": "Raiders strike from the arid south!",
+    "effects": {},
+    "pop_effect": -3,
+    "happiness_effect": -8
+  },
+  {
+    "name": "Caesar's Wrath",
+    "color": [
+      180,
+      30,
+      30
+    ],
+    "message": "Caesar is displeased with your defiance.",
+    "effects": {
+      "money": -300
+    },
+    "pop_effect": 0,
+    "happiness_effect": -15
+  }
+]

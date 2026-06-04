@@ -1,0 +1,92 @@
+[
+  {
+    "id": "caesar_tribute_500_scenario",
+    "npc_name": "TRIBUNE",
+    "npc_portrait": "tribune",
+    "background_scene": "caesar_pleased",
+    "request_text": "Caesar has heard of your prosperity here on the frontier. He requires a tribute of five hundred denarii, twenty units of iron, and forty bushels of wheat — a modest sum for a town as fortunate as yours. Caesar awaits your answer, governor.",
+    "resources": {
+      "money": -500,
+      "iron": -20,
+      "wheat": -40
+    },
+    "trigger_flag": "tribute_paid",
+    "trigger_event": "Caesar Displeased",
+    "decisions": [
+      {
+        "label": "Pay in full, immediately",
+        "delay_ticks": 0,
+        "effects": {"money": -500, "iron": -20, "wheat": -40},
+        "set_flag": "tribute_paid",
+        "happy": -2,
+        "diplomacy": 8
+      },
+      {
+        "label": "Pay, but request a month to gather it",
+        "delay_ticks": 600,
+        "effects": {"money": -500, "iron": -20, "wheat": -40},
+        "set_flag": "tribute_paid",
+        "happy": 0,
+        "diplomacy": 4
+      },
+      {
+        "label": "Pay the gold, withhold the iron",
+        "delay_ticks": 0,
+        "effects": {"money": -500},
+        "set_flag": "tribute_partial",
+        "fire_event": "Caesar Displeased",
+        "happy": 1,
+        "diplomacy": -3
+      },
+      {
+        "label": "Refuse the tribute",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "tribute_refused",
+        "fire_event": "Caesar Displeased",
+        "happy": 5,
+        "diplomacy": -12
+      }
+    ]
+  },
+  {
+    "id": "raid_aftermath_scenario",
+    "npc_name": "VILLAGE ELDER",
+    "npc_portrait": "raid_survivor",
+    "background_scene": "burning_village",
+    "request_text": "Governor — the raiders are gone, but they took grain and burned three of our homes. My people are hungry and afraid. We can rebuild, if you will give us tools and food. Or we can fortify, and pray they do not return.",
+    "resources": {
+      "tools": -20,
+      "wheat": -30,
+      "wood": -50
+    },
+    "trigger_flag": "barbarian_raid_survived",
+    "trigger_event": null,
+    "decisions": [
+      {
+        "label": "Rebuild the homes (tools, wood, wheat)",
+        "delay_ticks": 0,
+        "effects": {"tools": -20, "wheat": -30, "wood": -50},
+        "set_flag": "barbarian_raid_survived",
+        "happy": 12,
+        "diplomacy": 0
+      },
+      {
+        "label": "Build a palisade instead (wood + weapons)",
+        "delay_ticks": 0,
+        "effects": {"wood": -80, "weapons": -10},
+        "set_flag": "barbarian_raid_survived",
+        "happy": 4,
+        "diplomacy": 0
+      },
+      {
+        "label": "Send them away — we have no surplus",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "barbarian_raid_abandoned",
+        "happy": -15,
+        "diplomacy": -2
+      }
+    ]
+  }
+]

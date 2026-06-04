@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Caesar Displeased",
+    "effects": {
+      "money": -100
+    },
+    "pop": 0,
+    "happy": -10,
+    "msg": "Word from Rome: Caesar is displeased with your governance. Tax inspectors arrive unannounced.",
+    "color": [180, 60, 60],
+    "duration_ticks": 80,
+    "modifiers": {
+      "trade_profit_factor": 0.7
+    }
+  },
+  {
+    "name": "Frontier Trade Boom",
+    "effects": {
+      "money": 250
+    },
+    "pop": 0,
+    "happy": 8,
+    "msg": "Caravans from the south arrive bearing coin — your loyalty to Rome has not gone unnoticed.",
+    "color": [220, 190, 80]
+  },
+  {
+    "name": "Iron Vein Exhausted",
+    "effects": {},
+    "pop": 0,
+    "happy": -3,
+    "msg": "The eastern iron vein gives its last ore. Miners look to the hills for new seams.",
+    "color": [120, 110, 110]
+  }
+]

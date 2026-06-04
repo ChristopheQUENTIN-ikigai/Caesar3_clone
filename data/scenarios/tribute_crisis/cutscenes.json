@@ -1,0 +1,111 @@
+[
+  {
+    "id": "intro_tribute_crisis",
+    "title": "The Tribute Crisis Begins",
+    "trigger_flag": "",
+    "slides": [
+      {
+        "image": "frontier_dawn",
+        "caption": "Year 58 BC — A Frontier Outpost",
+        "body": "Mist clings to the river as your townsfolk wake. Rome's gaze rarely turns this far north, and your settlement has prospered quietly: farms in the valley, a hint of iron in the hills, fish in the shallow waters. But quiet does not last on the frontier."
+      },
+      {
+        "image": "frontier_dawn",
+        "caption": "Your Charge",
+        "body": "Grow the town. Stock the granaries. Keep the people fed and the engineers paid. When Rome remembers you exist — and it always does — you must be ready to answer."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_caesar_pleased",
+    "title": "Caesar's Favor",
+    "trigger_flag": "tribute_paid",
+    "slides": [
+      {
+        "image": "caesar_pleased",
+        "caption": "Tribute Delivered",
+        "body": "The chests of gold reach Rome. Caesar smiles thinly — a smile that, on him, means everything and nothing. Word goes out that your province is loyal, and within months traders from across the Mare Internum will be charting routes to your harbor."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_caesar_uneasy",
+    "title": "A Half-Answer to Rome",
+    "trigger_flag": "tribute_partial",
+    "slides": [
+      {
+        "image": "caesar_uneasy",
+        "caption": "The Iron Stays in the Hills",
+        "body": "The gold leaves for Rome but the iron does not. The tribune accepts the chests without comment and writes a single line in his ledger. Caesar reads the line that night. He does not send a reply, and the absence of a reply is, in its own way, an answer."
+      },
+      {
+        "image": "caesar_uneasy",
+        "caption": "Watched, Not Yet Punished",
+        "body": "Tax inspectors will arrive earlier than expected this season. Your standing in Rome is no longer comfortable — but the legions have not been recalled. Yet."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_caesar_wrath",
+    "title": "Caesar's Wrath",
+    "trigger_flag": "tribute_refused",
+    "slides": [
+      {
+        "image": "caesar_wrath",
+        "caption": "A Refusal Heard in Rome",
+        "body": "The messenger returns empty-handed. Caesar does not shout. He does not need to. A name is written in a ledger; a legion is recalled from its winter quarters; a barbarian chieftain in the north receives an unexpected gift of silver. The weather, you are told, will turn."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_raid_abandoned",
+    "title": "The Village That Was Sent Away",
+    "trigger_flag": "barbarian_raid_abandoned",
+    "slides": [
+      {
+        "image": "abandoned_village",
+        "caption": "No Tools, No Grain, No Shelter",
+        "body": "The elder gathers what is left of her people and walks back into the trees. They will winter where they can — in the caves above the river, or further south where another lord may take them in. Your forum is quiet. Your conscience, less so."
+      },
+      {
+        "image": "abandoned_village",
+        "caption": "A Cost Without a Ledger",
+        "body": "There is no banner, no immediate penalty. The town goes on. But songs about you, sung in markets you will never visit, will be a little different from now on."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_victory",
+    "title": "The Town Endures",
+    "trigger_flag": "barbarian_raid_survived",
+    "slides": [
+      {
+        "image": "victory_parade",
+        "caption": "Smoke Clears",
+        "body": "The palisades hold. The granaries hold. Children return to the square and the smith reopens his forge. Your name is spoken in the markets of Capua — not loudly, but with respect."
+      },
+      {
+        "image": "victory_parade",
+        "caption": "Scenario Complete",
+        "body": "You have weathered the Tribute Crisis. The province is yours to govern as you see fit, for as long as Caesar permits."
+      }
+    ]
+  },
+  {
+    "id": "cutscene_defeat",
+    "title": "The Treasury Fails",
+    "trigger_flag": "treasury_collapsed",
+    "slides": [
+      {
+        "image": "ruined_forum",
+        "caption": "Bankruptcy",
+        "body": "The treasury is empty. Wages go unpaid. Engineers walk away from the half-built bath. The forum stands silent as your people gather their belongings and drift back to the countryside."
+      },
+      {
+        "image": "ruined_forum",
+        "caption": "Scenario Lost",
+        "body": "Rome will appoint a new governor by the next moon. Your administration is at an end."
+      }
+    ]
+  }
+]

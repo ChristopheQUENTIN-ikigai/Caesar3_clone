@@ -1,0 +1,42 @@
+[
+  {
+    "id": "rpg_caesar_tribute",
+    "npc_name": "MESSENGER",
+    "npc_portrait": "messenger",
+    "background_scene": "throne_room",
+    "request_text": "Caesar asks 500 gold to fund the southern wall. Pay now, next month, or refuse?",
+    "resources": {
+      "money": -500
+    },
+    "decisions": [
+      {
+        "label": "Pay now",
+        "delay_ticks": 0,
+        "effects": {
+          "money": -500
+        },
+        "set_flag": "wall_funded",
+        "fire_event": null,
+        "happy": 5
+      },
+      {
+        "label": "Pay next month",
+        "delay_ticks": 600,
+        "effects": {
+          "money": -500
+        },
+        "set_flag": "wall_funded",
+        "fire_event": null,
+        "happy": 0
+      },
+      {
+        "label": "Refuse",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "caesar_displeased",
+        "fire_event": "Caesar's Wrath",
+        "happy": -10
+      }
+    ]
+  }
+]

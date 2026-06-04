@@ -1,0 +1,140 @@
+[
+  {
+    "id": "caesar_tribute_1k",
+    "npc_name": "MESSENGER",
+    "npc_portrait": "messenger",
+    "background_scene": "throne_room",
+    "request_text": "Caesar demands a tribute of one thousand golden coins.",
+    "resources": {
+      "money": -1000
+    },
+    "trigger_flag": "caesar_tribute_paid",
+    "trigger_event": "caesar_displeased",
+    "decisions": [
+      {
+        "label": "Yes immediately",
+        "delay_ticks": 0,
+        "effects": {"money": -1000},
+        "set_flag": "caesar_tribute_paid",
+        "happy": 0
+      },
+      {
+        "label": "Yes for next month",
+        "delay_ticks": 600,
+        "effects": {"money": -1000},
+        "set_flag": "caesar_tribute_paid",
+        "happy": -2
+      },
+      {
+        "label": "Yes for next season",
+        "delay_ticks": 1800,
+        "effects": {"money": -1000},
+        "set_flag": "caesar_tribute_paid",
+        "happy": -5
+      },
+      {
+        "label": "Yes for next year",
+        "delay_ticks": 7200,
+        "effects": {"money": -1000},
+        "set_flag": "caesar_tribute_paid",
+        "happy": -8
+      },
+      {
+        "label": "No",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "caesar_tribute_refused",
+        "fire_event": "caesar_displeased",
+        "happy": 5
+      }
+    ]
+  },
+  {
+    "id": "high_priest_oracle",
+    "npc_name": "HIGH PRIEST",
+    "npc_portrait": "high_priest",
+    "background_scene": "throne_room",
+    "request_text": "I come to request your favor, Great Caesar. Our city seeks to build an Oracle with a golden dome, a place to honor the gods and guide our people.",
+    "resources": {
+      "money": -800,
+      "stone": -200,
+      "wood": -100
+    },
+    "trigger_flag": "oracle_approved",
+    "trigger_event": null,
+    "decisions": [
+      {
+        "label": "Yes immediately",
+        "delay_ticks": 0,
+        "effects": {"money": -800, "stone": -200, "wood": -100},
+        "set_flag": "oracle_approved",
+        "happy": 8
+      },
+      {
+        "label": "Yes for next month",
+        "delay_ticks": 600,
+        "effects": {"money": -800, "stone": -200, "wood": -100},
+        "set_flag": "oracle_approved",
+        "happy": 4
+      },
+      {
+        "label": "Yes for next season",
+        "delay_ticks": 1800,
+        "effects": {"money": -800, "stone": -200, "wood": -100},
+        "set_flag": "oracle_approved",
+        "happy": 2
+      },
+      {
+        "label": "Yes for next year",
+        "delay_ticks": 7200,
+        "effects": {"money": -800, "stone": -200, "wood": -100},
+        "set_flag": "oracle_approved",
+        "happy": 0
+      },
+      {
+        "label": "No",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "oracle_refused",
+        "happy": -10
+      }
+    ]
+  },
+  {
+    "id": "general_legion_request",
+    "npc_name": "GENERAL",
+    "npc_portrait": "general",
+    "background_scene": "throne_room",
+    "request_text": "Caesar, the northern frontier weakens. I request weapons for two cohorts to reinforce the legion.",
+    "resources": {
+      "weapons": -40,
+      "money": -300
+    },
+    "trigger_flag": "legion_reinforced",
+    "trigger_event": null,
+    "decisions": [
+      {
+        "label": "Yes immediately",
+        "delay_ticks": 0,
+        "effects": {"weapons": -40, "money": -300},
+        "set_flag": "legion_reinforced",
+        "happy": 3
+      },
+      {
+        "label": "Yes for next month",
+        "delay_ticks": 600,
+        "effects": {"weapons": -40, "money": -300},
+        "set_flag": "legion_reinforced",
+        "happy": 1
+      },
+      {
+        "label": "No",
+        "delay_ticks": 0,
+        "effects": {},
+        "set_flag": "legion_denied",
+        "fire_event": "frontier_raid",
+        "happy": -3
+      }
+    ]
+  }
+]
